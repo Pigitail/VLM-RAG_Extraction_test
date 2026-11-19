@@ -1,0 +1,38 @@
+{
+  "description": "Example retrieval vocabulary for a small consumer product (an outdoor lantern). Replace it with your own domain, or point VLMRAG_DRAWING_DOMAIN_TERMS_PATH at 'none' to disable it.",
+  "groups": [
+    {
+      "tag": "surface_finish",
+      "field_key": "surface_finish",
+      "terms": ["Surface finish", "Finish", "Surface texture", "Coating"],
+      "patterns": ["surface\\s*finish", "\\bfinish\\b", "surface\\s*texture", "\\bcoating\\b"]
+    },
+    {
+      "tag": "vent_hole",
+      "field_key": "vent_hole",
+      "terms": ["Vent hole", "Venthole", "Breather hole"],
+      "patterns": ["\\bvent\\s*-?\\s*hole", "venthole", "breather\\s*hole"]
+    },
+    {
+      "tag": "seal",
+      "field_key": "seal",
+      "terms": ["Gasket", "Seal", "O-ring"],
+      "patterns": ["\\bgasket", "\\bseal\\b", "\\bo-?ring"]
+    }
+  ],
+  "parts": [
+    {"name": "housing", "patterns": ["\\bhousing\\b", "\\bhsg\\b"]},
+    {"name": "lens", "patterns": ["\\blens\\b", "\\blns\\b"]},
+    {"name": "reflector", "patterns": ["\\breflector\\b", "\\brfl\\b"]},
+    {"name": "cap", "patterns": ["\\btop\\s*cap\\b", "\\bcap\\b"]},
+    {"name": "handle", "patterns": ["\\bhandle\\b", "\\bhdl\\b"]},
+    {"name": "base", "patterns": ["\\bbase\\b"]}
+  ],
+  "sub_part_tokens": ["LH", "RH", "FR", "RR"],
+  "abbreviations": [
+    {"short": "HSG", "meaning": "housing"},
+    {"short": "LNS", "meaning": "lens"},
+    {"short": "RFL", "meaning": "reflector"}
+  ],
+  "repeated_header_example": "Finish"
+}

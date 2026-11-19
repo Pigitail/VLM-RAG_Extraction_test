@@ -1,0 +1,32 @@
+{
+  "name": "iso7200-like",
+  "description": "Neutral title-block fields modelled on ISO 7200 (identification, descriptive and administrative data) plus common technical cells. Person fields (creator, approver, signatures) are intentionally absent.",
+  "fields": [
+    {"key": "notes", "label": "Notes", "aliases": ["notes", "note", "general notes", "remarks"]},
+    {"key": "company", "label": "Company", "aliases": ["company", "company name", "legal owner", "owner", "organization", "organisation"]},
+    {"key": "department", "label": "Department", "aliases": ["department", "dept", "dept.", "responsible department", "section"]},
+    {"key": "title", "label": "Title", "aliases": ["title", "drawing title", "document title", "doc title", "doc. title"]},
+    {"key": "supplementary_title", "label": "Supplementary Title", "aliases": ["supplementary title", "subtitle", "sub-title", "sub title"]},
+    {"key": "product", "label": "Product", "aliases": ["product", "product name", "project", "assembly", "model"]},
+    {"key": "document_type", "label": "Document Type", "aliases": ["document type", "doc type", "doc. type", "drawing type"]},
+    {"key": "document_status", "label": "Document Status", "aliases": ["document status", "doc status", "status"]},
+    {"key": "drawing_number", "label": "Drawing No.", "aliases": ["drawing no", "drawing no.", "drawing number", "dwg no", "dwg no.", "dwg. no.", "document no", "document no.", "document number", "doc no", "doc. no.", "identification number", "id no"]},
+    {"key": "part_number", "label": "Part No.", "aliases": ["part no", "part no.", "part number", "p/n", "pn", "item no", "item no.", "article no"]},
+    {"key": "revision", "label": "Rev", "aliases": ["rev", "rev.", "revision", "revision index", "rev index"]},
+    {"key": "date_of_issue", "label": "Date of Issue", "aliases": ["date of issue", "issue date", "date", "issued", "release date"]},
+    {"key": "sheet", "label": "Sheet", "aliases": ["sheet", "sheet no", "sheet no.", "sheet number", "sht", "sht no", "sht no.", "sht. no."]},
+    {"key": "scale", "label": "Scale", "aliases": ["scale"]},
+    {"key": "sheet_size", "label": "Size", "aliases": ["size", "sheet size", "format", "paper size"]},
+    {"key": "projection", "label": "Projection", "aliases": ["projection", "projection method", "proj."]},
+    {"key": "units", "label": "Units", "aliases": ["units", "unit", "dimensions in"]},
+    {"key": "material", "label": "Material", "aliases": ["material", "matl", "matl.", "mat'l"], "table_field": true, "join": " / "},
+    {"key": "surface_finish", "label": "Surface Finish", "aliases": ["surface finish", "finish", "surface treatment"], "table_field": true, "row_field": true, "join": "; "},
+    {"key": "general_tolerance", "label": "General Tolerance", "aliases": ["general tolerance", "general tol.", "gen. tol.", "tolerance", "tol."], "table_field": true},
+    {"key": "mass", "label": "Mass", "aliases": ["mass", "weight", "wt."], "table_field": true}
+  ],
+  "normalize_rules": [
+    "Do not fill drawing_number from part_number, or part_number from drawing_number, unless the source explicitly shows that field.",
+    "Do not swap company and department unless the source clearly indicates it.",
+    "A document title (for example \"General Arrangement\") can differ from the product name; keep each in the field that fits its meaning."
+  ]
+}

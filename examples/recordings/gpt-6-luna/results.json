@@ -1,0 +1,3826 @@
+{
+  "format": "vlmrag-evaluation/1",
+  "package_version": "0.1.0",
+  "label": "synthetic set seed 0, azure gpt-6-luna",
+  "date": "2026-11-19",
+  "mode": "record",
+  "model": {
+    "provider": "azure",
+    "model": "gpt-6-luna",
+    "backend": "azure",
+    "reported_by_responses": [
+      "gpt-6-luna"
+    ]
+  },
+  "settings": {
+    "reasoning_effort": "low",
+    "structured_output": true,
+    "max_retries": 3,
+    "timeout_s": 600.0,
+    "max_concurrency": 4,
+    "cache": false
+  },
+  "environment": {
+    "libreoffice": true
+  },
+  "documents": {
+    "generated": true,
+    "seed": 0,
+    "docx_layout": "auto",
+    "items": [
+      {
+        "source": "lantern_housing.pdf",
+        "technique": "drawing",
+        "has_truth": true,
+        "doc_id": "b6c2cf0192d0573c",
+        "queries": 3,
+        "truth_pages": 2
+      },
+      {
+        "source": "lantern_reflector_scan.pdf",
+        "technique": "drawing",
+        "has_truth": true,
+        "doc_id": "b321678c888a843c",
+        "queries": 3,
+        "truth_pages": 1
+      },
+      {
+        "source": "lantern_bracket.pdf",
+        "technique": "drawing",
+        "has_truth": true,
+        "doc_id": "b99d54819b3193e8",
+        "queries": 3,
+        "truth_pages": 1
+      },
+      {
+        "source": "sample_erp_manual.pptx",
+        "technique": "slides",
+        "has_truth": true,
+        "doc_id": "2d64b79fa5b0fc78",
+        "queries": 5,
+        "truth_pages": 6
+      },
+      {
+        "source": "lantern_spec.docx",
+        "technique": "docx",
+        "has_truth": true,
+        "doc_id": "0a8900f3c9490543",
+        "queries": 4,
+        "layout_source": "libreoffice",
+        "truth_pages": 4
+      }
+    ]
+  },
+  "evaluation": {
+    "techniques": [
+      "drawing",
+      "slides",
+      "docx"
+    ],
+    "drawing_variants": [
+      {
+        "name": "cap",
+        "max_image_pixels": 4000000
+      }
+    ],
+    "baseline": true,
+    "doc_workers": 1,
+    "drawing_overrides": {},
+    "retrieval": {
+      "model": "bm25",
+      "ks": [
+        1,
+        3,
+        5
+      ]
+    },
+    "normalization": "unify dash and quote variants, casefold, collapse whitespace runs to one space, strip"
+  },
+  "metrics": {
+    "drawing": {
+      "vlm": {
+        "cap": {
+          "documents": 3,
+          "documents_with_truth": 3,
+          "gate": {
+            "attempted": 3,
+            "passed": 3,
+            "gate_failed": 0,
+            "other_errors": {},
+            "pass_rate": 1.0
+          },
+          "groups": {
+            "all": {
+              "sheets": 4,
+              "fields": 68,
+              "exact_correct": 65,
+              "normalized_correct": 65,
+              "exact": 0.955882,
+              "normalized": 0.955882,
+              "sheet_mean_normalized": 0.955882
+            },
+            "read": {
+              "sheets": 3,
+              "fields": 51,
+              "exact_correct": 51,
+              "normalized_correct": 51,
+              "exact": 1.0,
+              "normalized": 1.0,
+              "sheet_mean_normalized": 1.0
+            },
+            "inherited": {
+              "sheets": 1,
+              "fields": 17,
+              "exact_correct": 14,
+              "normalized_correct": 14,
+              "exact": 0.823529,
+              "normalized": 0.823529,
+              "sheet_mean_normalized": 0.823529
+            },
+            "raster_title_block": {
+              "sheets": 1,
+              "fields": 17,
+              "exact_correct": 17,
+              "normalized_correct": 17,
+              "exact": 1.0,
+              "normalized": 1.0,
+              "sheet_mean_normalized": 1.0
+            },
+            "text_layer_title_block": {
+              "sheets": 3,
+              "fields": 51,
+              "exact_correct": 48,
+              "normalized_correct": 48,
+              "exact": 0.941176,
+              "normalized": 0.941176,
+              "sheet_mean_normalized": 0.941176
+            }
+          },
+          "per_field": {
+            "company": {
+              "sheets": 4,
+              "exact_correct": 4,
+              "normalized_correct": 4,
+              "exact": 1.0,
+              "normalized": 1.0
+            },
+            "department": {
+              "sheets": 4,
+              "exact_correct": 4,
+              "normalized_correct": 4,
+              "exact": 1.0,
+              "normalized": 1.0
+            },
+            "product": {
+              "sheets": 4,
+              "exact_correct": 4,
+              "normalized_correct": 4,
+              "exact": 1.0,
+              "normalized": 1.0
+            },
+            "sheet_size": {
+              "sheets": 4,
+              "exact_correct": 4,
+              "normalized_correct": 4,
+              "exact": 1.0,
+              "normalized": 1.0
+            },
+            "projection": {
+              "sheets": 4,
+              "exact_correct": 4,
+              "normalized_correct": 4,
+              "exact": 1.0,
+              "normalized": 1.0
+            },
+            "document_type": {
+              "sheets": 4,
+              "exact_correct": 4,
+              "normalized_correct": 4,
+              "exact": 1.0,
+              "normalized": 1.0
+            },
+            "title": {
+              "sheets": 4,
+              "exact_correct": 3,
+              "normalized_correct": 3,
+              "exact": 0.75,
+              "normalized": 0.75
+            },
+            "drawing_number": {
+              "sheets": 4,
+              "exact_correct": 4,
+              "normalized_correct": 4,
+              "exact": 1.0,
+              "normalized": 1.0
+            },
+            "part_number": {
+              "sheets": 4,
+              "exact_correct": 4,
+              "normalized_correct": 4,
+              "exact": 1.0,
+              "normalized": 1.0
+            },
+            "revision": {
+              "sheets": 4,
+              "exact_correct": 4,
+              "normalized_correct": 4,
+              "exact": 1.0,
+              "normalized": 1.0
+            },
+            "date_of_issue": {
+              "sheets": 4,
+              "exact_correct": 4,
+              "normalized_correct": 4,
+              "exact": 1.0,
+              "normalized": 1.0
+            },
+            "scale": {
+              "sheets": 4,
+              "exact_correct": 3,
+              "normalized_correct": 3,
+              "exact": 0.75,
+              "normalized": 0.75
+            },
+            "sheet": {
+              "sheets": 4,
+              "exact_correct": 3,
+              "normalized_correct": 3,
+              "exact": 0.75,
+              "normalized": 0.75
+            },
+            "material": {
+              "sheets": 4,
+              "exact_correct": 4,
+              "normalized_correct": 4,
+              "exact": 1.0,
+              "normalized": 1.0
+            },
+            "general_tolerance": {
+              "sheets": 4,
+              "exact_correct": 4,
+              "normalized_correct": 4,
+              "exact": 1.0,
+              "normalized": 1.0
+            },
+            "mass": {
+              "sheets": 4,
+              "exact_correct": 4,
+              "normalized_correct": 4,
+              "exact": 1.0,
+              "normalized": 1.0
+            },
+            "surface_finish": {
+              "sheets": 4,
+              "exact_correct": 4,
+              "normalized_correct": 4,
+              "exact": 1.0,
+              "normalized": 1.0
+            }
+          },
+          "sheets": [
+            {
+              "source": "lantern_housing.pdf",
+              "page": 1,
+              "status": "ok",
+              "error_type": null,
+              "title_block_page": 1,
+              "inherited": false,
+              "raster_regions": [
+                "revision_table"
+              ],
+              "raster_title_block": false,
+              "fields_scored": 17,
+              "exact": 1.0,
+              "normalized": 1.0,
+              "fields": {
+                "company": {
+                  "truth": "Example Manufacturing Co.",
+                  "predicted": "Example Manufacturing Co.",
+                  "exact": true,
+                  "normalized": true
+                },
+                "department": {
+                  "truth": "Product Engineering",
+                  "predicted": "Product Engineering",
+                  "exact": true,
+                  "normalized": true
+                },
+                "product": {
+                  "truth": "Outdoor Lantern L-300",
+                  "predicted": "Outdoor Lantern L-300",
+                  "exact": true,
+                  "normalized": true
+                },
+                "sheet_size": {
+                  "truth": "A3",
+                  "predicted": "A3",
+                  "exact": true,
+                  "normalized": true
+                },
+                "projection": {
+                  "truth": "First angle",
+                  "predicted": "First angle",
+                  "exact": true,
+                  "normalized": true
+                },
+                "document_type": {
+                  "truth": "Detail drawing",
+                  "predicted": "Detail drawing",
+                  "exact": true,
+                  "normalized": true
+                },
+                "title": {
+                  "truth": "LANTERN HOUSING",
+                  "predicted": "LANTERN HOUSING",
+                  "exact": true,
+                  "normalized": true
+                },
+                "drawing_number": {
+                  "truth": "EX-L300-1001",
+                  "predicted": "EX-L300-1001",
+                  "exact": true,
+                  "normalized": true
+                },
+                "part_number": {
+                  "truth": "L300-HSG-01",
+                  "predicted": "L300-HSG-01",
+                  "exact": true,
+                  "normalized": true
+                },
+                "revision": {
+                  "truth": "C",
+                  "predicted": "C",
+                  "exact": true,
+                  "normalized": true
+                },
+                "date_of_issue": {
+                  "truth": "2026-03-14",
+                  "predicted": "2026-03-14",
+                  "exact": true,
+                  "normalized": true
+                },
+                "scale": {
+                  "truth": "1:2",
+                  "predicted": "1:2",
+                  "exact": true,
+                  "normalized": true
+                },
+                "sheet": {
+                  "truth": "1/2",
+                  "predicted": "1/2",
+                  "exact": true,
+                  "normalized": true
+                },
+                "material": {
+                  "truth": "PC-UV STABILISED",
+                  "predicted": "PC-UV STABILISED",
+                  "exact": true,
+                  "normalized": true
+                },
+                "general_tolerance": {
+                  "truth": "ISO 2768-m",
+                  "predicted": "ISO 2768-m",
+                  "exact": true,
+                  "normalized": true
+                },
+                "mass": {
+                  "truth": "0.42 kg",
+                  "predicted": "0.42 kg",
+                  "exact": true,
+                  "normalized": true
+                },
+                "surface_finish": {
+                  "truth": "HOUSING: MATTE BLACK | CAP: SATIN GREY",
+                  "predicted": "HOUSING: MATTE BLACK | CAP: SATIN GREY",
+                  "exact": true,
+                  "normalized": true
+                }
+              }
+            },
+            {
+              "source": "lantern_housing.pdf",
+              "page": 2,
+              "status": "ok",
+              "error_type": null,
+              "title_block_page": 1,
+              "inherited": true,
+              "raster_regions": [],
+              "raster_title_block": false,
+              "fields_scored": 17,
+              "exact": 0.823529,
+              "normalized": 0.823529,
+              "fields": {
+                "company": {
+                  "truth": "Example Manufacturing Co.",
+                  "predicted": "Example Manufacturing Co.",
+                  "exact": true,
+                  "normalized": true
+                },
+                "department": {
+                  "truth": "Product Engineering",
+                  "predicted": "Product Engineering",
+                  "exact": true,
+                  "normalized": true
+                },
+                "product": {
+                  "truth": "Outdoor Lantern L-300",
+                  "predicted": "Outdoor Lantern L-300",
+                  "exact": true,
+                  "normalized": true
+                },
+                "sheet_size": {
+                  "truth": "A3",
+                  "predicted": "A3",
+                  "exact": true,
+                  "normalized": true
+                },
+                "projection": {
+                  "truth": "First angle",
+                  "predicted": "First angle",
+                  "exact": true,
+                  "normalized": true
+                },
+                "document_type": {
+                  "truth": "Detail drawing",
+                  "predicted": "Detail drawing",
+                  "exact": true,
+                  "normalized": true
+                },
+                "title": {
+                  "truth": "LANTERN HOUSING SECTIONS",
+                  "predicted": "LANTERN HOUSING",
+                  "exact": false,
+                  "normalized": false
+                },
+                "drawing_number": {
+                  "truth": "EX-L300-1001",
+                  "predicted": "EX-L300-1001",
+                  "exact": true,
+                  "normalized": true
+                },
+                "part_number": {
+                  "truth": "L300-HSG-01",
+                  "predicted": "L300-HSG-01",
+                  "exact": true,
+                  "normalized": true
+                },
+                "revision": {
+                  "truth": "C",
+                  "predicted": "C",
+                  "exact": true,
+                  "normalized": true
+                },
+                "date_of_issue": {
+                  "truth": "2026-03-14",
+                  "predicted": "2026-03-14",
+                  "exact": true,
+                  "normalized": true
+                },
+                "scale": {
+                  "truth": "1:1",
+                  "predicted": "1:2",
+                  "exact": false,
+                  "normalized": false
+                },
+                "sheet": {
+                  "truth": "2/2",
+                  "predicted": "1/2",
+                  "exact": false,
+                  "normalized": false
+                },
+                "material": {
+                  "truth": "PC-UV STABILISED",
+                  "predicted": "PC-UV STABILISED",
+                  "exact": true,
+                  "normalized": true
+                },
+                "general_tolerance": {
+                  "truth": "ISO 2768-m",
+                  "predicted": "ISO 2768-m",
+                  "exact": true,
+                  "normalized": true
+                },
+                "mass": {
+                  "truth": "0.42 kg",
+                  "predicted": "0.42 kg",
+                  "exact": true,
+                  "normalized": true
+                },
+                "surface_finish": {
+                  "truth": "HOUSING: MATTE BLACK | CAP: SATIN GREY",
+                  "predicted": "HOUSING: MATTE BLACK | CAP: SATIN GREY",
+                  "exact": true,
+                  "normalized": true
+                }
+              }
+            },
+            {
+              "source": "lantern_reflector_scan.pdf",
+              "page": 1,
+              "status": "ok",
+              "error_type": null,
+              "title_block_page": 1,
+              "inherited": false,
+              "raster_regions": [
+                "revision_table",
+                "title_block"
+              ],
+              "raster_title_block": true,
+              "fields_scored": 17,
+              "exact": 1.0,
+              "normalized": 1.0,
+              "fields": {
+                "company": {
+                  "truth": "Example Manufacturing Co.",
+                  "predicted": "Example Manufacturing Co.",
+                  "exact": true,
+                  "normalized": true
+                },
+                "department": {
+                  "truth": "Product Engineering",
+                  "predicted": "Product Engineering",
+                  "exact": true,
+                  "normalized": true
+                },
+                "product": {
+                  "truth": "Outdoor Lantern L-300",
+                  "predicted": "Outdoor Lantern L-300",
+                  "exact": true,
+                  "normalized": true
+                },
+                "sheet_size": {
+                  "truth": "A3",
+                  "predicted": "A3",
+                  "exact": true,
+                  "normalized": true
+                },
+                "projection": {
+                  "truth": "First angle",
+                  "predicted": "First angle",
+                  "exact": true,
+                  "normalized": true
+                },
+                "document_type": {
+                  "truth": "Detail drawing",
+                  "predicted": "Detail drawing",
+                  "exact": true,
+                  "normalized": true
+                },
+                "title": {
+                  "truth": "REFLECTOR",
+                  "predicted": "REFLECTOR",
+                  "exact": true,
+                  "normalized": true
+                },
+                "drawing_number": {
+                  "truth": "EX-L300-1004",
+                  "predicted": "EX-L300-1004",
+                  "exact": true,
+                  "normalized": true
+                },
+                "part_number": {
+                  "truth": "L300-RFL-02",
+                  "predicted": "L300-RFL-02",
+                  "exact": true,
+                  "normalized": true
+                },
+                "revision": {
+                  "truth": "B",
+                  "predicted": "B",
+                  "exact": true,
+                  "normalized": true
+                },
+                "date_of_issue": {
+                  "truth": "2026-02-09",
+                  "predicted": "2026-02-09",
+                  "exact": true,
+                  "normalized": true
+                },
+                "scale": {
+                  "truth": "1:1",
+                  "predicted": "1:1",
+                  "exact": true,
+                  "normalized": true
+                },
+                "sheet": {
+                  "truth": "1/1",
+                  "predicted": "1/1",
+                  "exact": true,
+                  "normalized": true
+                },
+                "material": {
+                  "truth": "ALUMINIUM 1050-H14",
+                  "predicted": "ALUMINIUM 1050-H14",
+                  "exact": true,
+                  "normalized": true
+                },
+                "general_tolerance": {
+                  "truth": "ISO 2768-f",
+                  "predicted": "ISO 2768-f",
+                  "exact": true,
+                  "normalized": true
+                },
+                "mass": {
+                  "truth": "0.08 kg",
+                  "predicted": "0.08 kg",
+                  "exact": true,
+                  "normalized": true
+                },
+                "surface_finish": {
+                  "truth": "REFLECTOR: BRIGHT ANODIZED",
+                  "predicted": "REFLECTOR: BRIGHT ANODIZED",
+                  "exact": true,
+                  "normalized": true
+                }
+              }
+            },
+            {
+              "source": "lantern_bracket.pdf",
+              "page": 1,
+              "status": "ok",
+              "error_type": null,
+              "title_block_page": 1,
+              "inherited": false,
+              "raster_regions": [
+                "material_table"
+              ],
+              "raster_title_block": false,
+              "fields_scored": 17,
+              "exact": 1.0,
+              "normalized": 1.0,
+              "fields": {
+                "company": {
+                  "truth": "Example Manufacturing Co.",
+                  "predicted": "Example Manufacturing Co.",
+                  "exact": true,
+                  "normalized": true
+                },
+                "department": {
+                  "truth": "Product Engineering",
+                  "predicted": "Product Engineering",
+                  "exact": true,
+                  "normalized": true
+                },
+                "product": {
+                  "truth": "Outdoor Lantern L-300",
+                  "predicted": "Outdoor Lantern L-300",
+                  "exact": true,
+                  "normalized": true
+                },
+                "sheet_size": {
+                  "truth": "A3",
+                  "predicted": "A3",
+                  "exact": true,
+                  "normalized": true
+                },
+                "projection": {
+                  "truth": "First angle",
+                  "predicted": "First angle",
+                  "exact": true,
+                  "normalized": true
+                },
+                "document_type": {
+                  "truth": "Detail drawing",
+                  "predicted": "Detail drawing",
+                  "exact": true,
+                  "normalized": true
+                },
+                "title": {
+                  "truth": "MOUNTING BRACKET",
+                  "predicted": "MOUNTING BRACKET",
+                  "exact": true,
+                  "normalized": true
+                },
+                "drawing_number": {
+                  "truth": "EX-L300-1007",
+                  "predicted": "EX-L300-1007",
+                  "exact": true,
+                  "normalized": true
+                },
+                "part_number": {
+                  "truth": "L300-BRK-03",
+                  "predicted": "L300-BRK-03",
+                  "exact": true,
+                  "normalized": true
+                },
+                "revision": {
+                  "truth": "A",
+                  "predicted": "A",
+                  "exact": true,
+                  "normalized": true
+                },
+                "date_of_issue": {
+                  "truth": "2026-01-05",
+                  "predicted": "2026-01-05",
+                  "exact": true,
+                  "normalized": true
+                },
+                "scale": {
+                  "truth": "1:1",
+                  "predicted": "1:1",
+                  "exact": true,
+                  "normalized": true
+                },
+                "sheet": {
+                  "truth": "1/1",
+                  "predicted": "1/1",
+                  "exact": true,
+                  "normalized": true
+                },
+                "material": {
+                  "truth": "STAINLESS STEEL 1.4301",
+                  "predicted": "STAINLESS STEEL 1.4301",
+                  "exact": true,
+                  "normalized": true
+                },
+                "general_tolerance": {
+                  "truth": "ISO 2768-m",
+                  "predicted": "ISO 2768-m",
+                  "exact": true,
+                  "normalized": true
+                },
+                "mass": {
+                  "truth": "0.15 kg",
+                  "predicted": "0.15 kg",
+                  "exact": true,
+                  "normalized": true
+                },
+                "surface_finish": {
+                  "truth": "BRACKET: BEAD BLASTED | FASTENERS: PASSIVATED",
+                  "predicted": "BRACKET: BEAD BLASTED | FASTENERS: PASSIVATED",
+                  "exact": true,
+                  "normalized": true
+                }
+              }
+            }
+          ]
+        }
+      },
+      "baseline": {
+        "cap": {
+          "documents": 3,
+          "documents_with_truth": 3,
+          "gate": {
+            "attempted": 3,
+            "passed": 0,
+            "gate_failed": 3,
+            "other_errors": {},
+            "pass_rate": 0.0
+          },
+          "groups": {
+            "all": {
+              "sheets": 4,
+              "fields": 68,
+              "exact_correct": 0,
+              "normalized_correct": 0,
+              "exact": 0.0,
+              "normalized": 0.0,
+              "sheet_mean_normalized": 0.0
+            },
+            "read": {
+              "sheets": 0,
+              "fields": 0,
+              "exact_correct": 0,
+              "normalized_correct": 0,
+              "exact": null,
+              "normalized": null,
+              "sheet_mean_normalized": null
+            },
+            "inherited": {
+              "sheets": 0,
+              "fields": 0,
+              "exact_correct": 0,
+              "normalized_correct": 0,
+              "exact": null,
+              "normalized": null,
+              "sheet_mean_normalized": null
+            },
+            "raster_title_block": {
+              "sheets": 1,
+              "fields": 17,
+              "exact_correct": 0,
+              "normalized_correct": 0,
+              "exact": 0.0,
+              "normalized": 0.0,
+              "sheet_mean_normalized": 0.0
+            },
+            "text_layer_title_block": {
+              "sheets": 3,
+              "fields": 51,
+              "exact_correct": 0,
+              "normalized_correct": 0,
+              "exact": 0.0,
+              "normalized": 0.0,
+              "sheet_mean_normalized": 0.0
+            }
+          },
+          "per_field": {
+            "company": {
+              "sheets": 4,
+              "exact_correct": 0,
+              "normalized_correct": 0,
+              "exact": 0.0,
+              "normalized": 0.0
+            },
+            "department": {
+              "sheets": 4,
+              "exact_correct": 0,
+              "normalized_correct": 0,
+              "exact": 0.0,
+              "normalized": 0.0
+            },
+            "product": {
+              "sheets": 4,
+              "exact_correct": 0,
+              "normalized_correct": 0,
+              "exact": 0.0,
+              "normalized": 0.0
+            },
+            "sheet_size": {
+              "sheets": 4,
+              "exact_correct": 0,
+              "normalized_correct": 0,
+              "exact": 0.0,
+              "normalized": 0.0
+            },
+            "projection": {
+              "sheets": 4,
+              "exact_correct": 0,
+              "normalized_correct": 0,
+              "exact": 0.0,
+              "normalized": 0.0
+            },
+            "document_type": {
+              "sheets": 4,
+              "exact_correct": 0,
+              "normalized_correct": 0,
+              "exact": 0.0,
+              "normalized": 0.0
+            },
+            "title": {
+              "sheets": 4,
+              "exact_correct": 0,
+              "normalized_correct": 0,
+              "exact": 0.0,
+              "normalized": 0.0
+            },
+            "drawing_number": {
+              "sheets": 4,
+              "exact_correct": 0,
+              "normalized_correct": 0,
+              "exact": 0.0,
+              "normalized": 0.0
+            },
+            "part_number": {
+              "sheets": 4,
+              "exact_correct": 0,
+              "normalized_correct": 0,
+              "exact": 0.0,
+              "normalized": 0.0
+            },
+            "revision": {
+              "sheets": 4,
+              "exact_correct": 0,
+              "normalized_correct": 0,
+              "exact": 0.0,
+              "normalized": 0.0
+            },
+            "date_of_issue": {
+              "sheets": 4,
+              "exact_correct": 0,
+              "normalized_correct": 0,
+              "exact": 0.0,
+              "normalized": 0.0
+            },
+            "scale": {
+              "sheets": 4,
+              "exact_correct": 0,
+              "normalized_correct": 0,
+              "exact": 0.0,
+              "normalized": 0.0
+            },
+            "sheet": {
+              "sheets": 4,
+              "exact_correct": 0,
+              "normalized_correct": 0,
+              "exact": 0.0,
+              "normalized": 0.0
+            },
+            "material": {
+              "sheets": 4,
+              "exact_correct": 0,
+              "normalized_correct": 0,
+              "exact": 0.0,
+              "normalized": 0.0
+            },
+            "general_tolerance": {
+              "sheets": 4,
+              "exact_correct": 0,
+              "normalized_correct": 0,
+              "exact": 0.0,
+              "normalized": 0.0
+            },
+            "mass": {
+              "sheets": 4,
+              "exact_correct": 0,
+              "normalized_correct": 0,
+              "exact": 0.0,
+              "normalized": 0.0
+            },
+            "surface_finish": {
+              "sheets": 4,
+              "exact_correct": 0,
+              "normalized_correct": 0,
+              "exact": 0.0,
+              "normalized": 0.0
+            }
+          },
+          "sheets": [
+            {
+              "source": "lantern_housing.pdf",
+              "page": 1,
+              "status": "error",
+              "error_type": "TitleBlockGateError",
+              "title_block_page": null,
+              "inherited": false,
+              "raster_regions": [
+                "revision_table"
+              ],
+              "raster_title_block": false,
+              "fields_scored": 17,
+              "exact": 0.0,
+              "normalized": 0.0,
+              "fields": {
+                "company": {
+                  "truth": "Example Manufacturing Co.",
+                  "predicted": "",
+                  "exact": false,
+                  "normalized": false
+                },
+                "department": {
+                  "truth": "Product Engineering",
+                  "predicted": "",
+                  "exact": false,
+                  "normalized": false
+                },
+                "product": {
+                  "truth": "Outdoor Lantern L-300",
+                  "predicted": "",
+                  "exact": false,
+                  "normalized": false
+                },
+                "sheet_size": {
+                  "truth": "A3",
+                  "predicted": "",
+                  "exact": false,
+                  "normalized": false
+                },
+                "projection": {
+                  "truth": "First angle",
+                  "predicted": "",
+                  "exact": false,
+                  "normalized": false
+                },
+                "document_type": {
+                  "truth": "Detail drawing",
+                  "predicted": "",
+                  "exact": false,
+                  "normalized": false
+                },
+                "title": {
+                  "truth": "LANTERN HOUSING",
+                  "predicted": "",
+                  "exact": false,
+                  "normalized": false
+                },
+                "drawing_number": {
+                  "truth": "EX-L300-1001",
+                  "predicted": "",
+                  "exact": false,
+                  "normalized": false
+                },
+                "part_number": {
+                  "truth": "L300-HSG-01",
+                  "predicted": "",
+                  "exact": false,
+                  "normalized": false
+                },
+                "revision": {
+                  "truth": "C",
+                  "predicted": "",
+                  "exact": false,
+                  "normalized": false
+                },
+                "date_of_issue": {
+                  "truth": "2026-03-14",
+                  "predicted": "",
+                  "exact": false,
+                  "normalized": false
+                },
+                "scale": {
+                  "truth": "1:2",
+                  "predicted": "",
+                  "exact": false,
+                  "normalized": false
+                },
+                "sheet": {
+                  "truth": "1/2",
+                  "predicted": "",
+                  "exact": false,
+                  "normalized": false
+                },
+                "material": {
+                  "truth": "PC-UV STABILISED",
+                  "predicted": "",
+                  "exact": false,
+                  "normalized": false
+                },
+                "general_tolerance": {
+                  "truth": "ISO 2768-m",
+                  "predicted": "",
+                  "exact": false,
+                  "normalized": false
+                },
+                "mass": {
+                  "truth": "0.42 kg",
+                  "predicted": "",
+                  "exact": false,
+                  "normalized": false
+                },
+                "surface_finish": {
+                  "truth": "HOUSING: MATTE BLACK | CAP: SATIN GREY",
+                  "predicted": "",
+                  "exact": false,
+                  "normalized": false
+                }
+              }
+            },
+            {
+              "source": "lantern_housing.pdf",
+              "page": 2,
+              "status": "error",
+              "error_type": "TitleBlockGateError",
+              "title_block_page": null,
+              "inherited": false,
+              "raster_regions": [],
+              "raster_title_block": false,
+              "fields_scored": 17,
+              "exact": 0.0,
+              "normalized": 0.0,
+              "fields": {
+                "company": {
+                  "truth": "Example Manufacturing Co.",
+                  "predicted": "",
+                  "exact": false,
+                  "normalized": false
+                },
+                "department": {
+                  "truth": "Product Engineering",
+                  "predicted": "",
+                  "exact": false,
+                  "normalized": false
+                },
+                "product": {
+                  "truth": "Outdoor Lantern L-300",
+                  "predicted": "",
+                  "exact": false,
+                  "normalized": false
+                },
+                "sheet_size": {
+                  "truth": "A3",
+                  "predicted": "",
+                  "exact": false,
+                  "normalized": false
+                },
+                "projection": {
+                  "truth": "First angle",
+                  "predicted": "",
+                  "exact": false,
+                  "normalized": false
+                },
+                "document_type": {
+                  "truth": "Detail drawing",
+                  "predicted": "",
+                  "exact": false,
+                  "normalized": false
+                },
+                "title": {
+                  "truth": "LANTERN HOUSING SECTIONS",
+                  "predicted": "",
+                  "exact": false,
+                  "normalized": false
+                },
+                "drawing_number": {
+                  "truth": "EX-L300-1001",
+                  "predicted": "",
+                  "exact": false,
+                  "normalized": false
+                },
+                "part_number": {
+                  "truth": "L300-HSG-01",
+                  "predicted": "",
+                  "exact": false,
+                  "normalized": false
+                },
+                "revision": {
+                  "truth": "C",
+                  "predicted": "",
+                  "exact": false,
+                  "normalized": false
+                },
+                "date_of_issue": {
+                  "truth": "2026-03-14",
+                  "predicted": "",
+                  "exact": false,
+                  "normalized": false
+                },
+                "scale": {
+                  "truth": "1:1",
+                  "predicted": "",
+                  "exact": false,
+                  "normalized": false
+                },
+                "sheet": {
+                  "truth": "2/2",
+                  "predicted": "",
+                  "exact": false,
+                  "normalized": false
+                },
+                "material": {
+                  "truth": "PC-UV STABILISED",
+                  "predicted": "",
+                  "exact": false,
+                  "normalized": false
+                },
+                "general_tolerance": {
+                  "truth": "ISO 2768-m",
+                  "predicted": "",
+                  "exact": false,
+                  "normalized": false
+                },
+                "mass": {
+                  "truth": "0.42 kg",
+                  "predicted": "",
+                  "exact": false,
+                  "normalized": false
+                },
+                "surface_finish": {
+                  "truth": "HOUSING: MATTE BLACK | CAP: SATIN GREY",
+                  "predicted": "",
+                  "exact": false,
+                  "normalized": false
+                }
+              }
+            },
+            {
+              "source": "lantern_reflector_scan.pdf",
+              "page": 1,
+              "status": "error",
+              "error_type": "TitleBlockGateError",
+              "title_block_page": null,
+              "inherited": false,
+              "raster_regions": [
+                "revision_table",
+                "title_block"
+              ],
+              "raster_title_block": true,
+              "fields_scored": 17,
+              "exact": 0.0,
+              "normalized": 0.0,
+              "fields": {
+                "company": {
+                  "truth": "Example Manufacturing Co.",
+                  "predicted": "",
+                  "exact": false,
+                  "normalized": false
+                },
+                "department": {
+                  "truth": "Product Engineering",
+                  "predicted": "",
+                  "exact": false,
+                  "normalized": false
+                },
+                "product": {
+                  "truth": "Outdoor Lantern L-300",
+                  "predicted": "",
+                  "exact": false,
+                  "normalized": false
+                },
+                "sheet_size": {
+                  "truth": "A3",
+                  "predicted": "",
+                  "exact": false,
+                  "normalized": false
+                },
+                "projection": {
+                  "truth": "First angle",
+                  "predicted": "",
+                  "exact": false,
+                  "normalized": false
+                },
+                "document_type": {
+                  "truth": "Detail drawing",
+                  "predicted": "",
+                  "exact": false,
+                  "normalized": false
+                },
+                "title": {
+                  "truth": "REFLECTOR",
+                  "predicted": "",
+                  "exact": false,
+                  "normalized": false
+                },
+                "drawing_number": {
+                  "truth": "EX-L300-1004",
+                  "predicted": "",
+                  "exact": false,
+                  "normalized": false
+                },
+                "part_number": {
+                  "truth": "L300-RFL-02",
+                  "predicted": "",
+                  "exact": false,
+                  "normalized": false
+                },
+                "revision": {
+                  "truth": "B",
+                  "predicted": "",
+                  "exact": false,
+                  "normalized": false
+                },
+                "date_of_issue": {
+                  "truth": "2026-02-09",
+                  "predicted": "",
+                  "exact": false,
+                  "normalized": false
+                },
+                "scale": {
+                  "truth": "1:1",
+                  "predicted": "",
+                  "exact": false,
+                  "normalized": false
+                },
+                "sheet": {
+                  "truth": "1/1",
+                  "predicted": "",
+                  "exact": false,
+                  "normalized": false
+                },
+                "material": {
+                  "truth": "ALUMINIUM 1050-H14",
+                  "predicted": "",
+                  "exact": false,
+                  "normalized": false
+                },
+                "general_tolerance": {
+                  "truth": "ISO 2768-f",
+                  "predicted": "",
+                  "exact": false,
+                  "normalized": false
+                },
+                "mass": {
+                  "truth": "0.08 kg",
+                  "predicted": "",
+                  "exact": false,
+                  "normalized": false
+                },
+                "surface_finish": {
+                  "truth": "REFLECTOR: BRIGHT ANODIZED",
+                  "predicted": "",
+                  "exact": false,
+                  "normalized": false
+                }
+              }
+            },
+            {
+              "source": "lantern_bracket.pdf",
+              "page": 1,
+              "status": "error",
+              "error_type": "TitleBlockGateError",
+              "title_block_page": null,
+              "inherited": false,
+              "raster_regions": [
+                "material_table"
+              ],
+              "raster_title_block": false,
+              "fields_scored": 17,
+              "exact": 0.0,
+              "normalized": 0.0,
+              "fields": {
+                "company": {
+                  "truth": "Example Manufacturing Co.",
+                  "predicted": "",
+                  "exact": false,
+                  "normalized": false
+                },
+                "department": {
+                  "truth": "Product Engineering",
+                  "predicted": "",
+                  "exact": false,
+                  "normalized": false
+                },
+                "product": {
+                  "truth": "Outdoor Lantern L-300",
+                  "predicted": "",
+                  "exact": false,
+                  "normalized": false
+                },
+                "sheet_size": {
+                  "truth": "A3",
+                  "predicted": "",
+                  "exact": false,
+                  "normalized": false
+                },
+                "projection": {
+                  "truth": "First angle",
+                  "predicted": "",
+                  "exact": false,
+                  "normalized": false
+                },
+                "document_type": {
+                  "truth": "Detail drawing",
+                  "predicted": "",
+                  "exact": false,
+                  "normalized": false
+                },
+                "title": {
+                  "truth": "MOUNTING BRACKET",
+                  "predicted": "",
+                  "exact": false,
+                  "normalized": false
+                },
+                "drawing_number": {
+                  "truth": "EX-L300-1007",
+                  "predicted": "",
+                  "exact": false,
+                  "normalized": false
+                },
+                "part_number": {
+                  "truth": "L300-BRK-03",
+                  "predicted": "",
+                  "exact": false,
+                  "normalized": false
+                },
+                "revision": {
+                  "truth": "A",
+                  "predicted": "",
+                  "exact": false,
+                  "normalized": false
+                },
+                "date_of_issue": {
+                  "truth": "2026-01-05",
+                  "predicted": "",
+                  "exact": false,
+                  "normalized": false
+                },
+                "scale": {
+                  "truth": "1:1",
+                  "predicted": "",
+                  "exact": false,
+                  "normalized": false
+                },
+                "sheet": {
+                  "truth": "1/1",
+                  "predicted": "",
+                  "exact": false,
+                  "normalized": false
+                },
+                "material": {
+                  "truth": "STAINLESS STEEL 1.4301",
+                  "predicted": "",
+                  "exact": false,
+                  "normalized": false
+                },
+                "general_tolerance": {
+                  "truth": "ISO 2768-m",
+                  "predicted": "",
+                  "exact": false,
+                  "normalized": false
+                },
+                "mass": {
+                  "truth": "0.15 kg",
+                  "predicted": "",
+                  "exact": false,
+                  "normalized": false
+                },
+                "surface_finish": {
+                  "truth": "BRACKET: BEAD BLASTED | FASTENERS: PASSIVATED",
+                  "predicted": "",
+                  "exact": false,
+                  "normalized": false
+                }
+              }
+            }
+          ]
+        }
+      }
+    },
+    "slides": {
+      "vlm": {
+        "documents": 1,
+        "failed_documents": 0,
+        "slides": 6,
+        "image_role": {
+          "blocks": 7,
+          "described": 7,
+          "correct": 7,
+          "accuracy": 1.0,
+          "confusion": {
+            "detail_crop": {
+              "detail_crop": 1
+            },
+            "inline_image": {
+              "inline_image": 1
+            },
+            "main_screenshot": {
+              "main_screenshot": 4
+            },
+            "ui_icon": {
+              "ui_icon": 1
+            }
+          }
+        },
+        "must_mention": {
+          "facts": 6,
+          "found": 1,
+          "recall": 0.166667,
+          "slide_mean_recall": 0.125
+        },
+        "hallucinated_blocks": {
+          "total": 0,
+          "ungrounded": 0,
+          "not_in_truth": 0,
+          "duplicate": 0
+        },
+        "visual_calls": {
+          "expected": 4,
+          "ok": 4
+        },
+        "per_slide": [
+          {
+            "source": "sample_erp_manual.pptx",
+            "slide": 1,
+            "chunk": true,
+            "error_type": null,
+            "expects_visual_call": false,
+            "visual_call_status": "skipped",
+            "image_blocks": [],
+            "role_correct": 0,
+            "must_mention": [],
+            "must_mention_recall": null,
+            "hallucinated": {
+              "total": 0,
+              "ungrounded": 0,
+              "not_in_truth": 0,
+              "duplicate": 0
+            }
+          },
+          {
+            "source": "sample_erp_manual.pptx",
+            "slide": 2,
+            "chunk": true,
+            "error_type": null,
+            "expects_visual_call": true,
+            "visual_call_status": "ok",
+            "image_blocks": [
+              {
+                "shape_name": "Screen PUR-110",
+                "truth_role": "main_screenshot",
+                "predicted_role": "main_screenshot",
+                "described": true,
+                "correct": true
+              }
+            ],
+            "role_correct": 1,
+            "must_mention": [
+              {
+                "fact": "V-2864",
+                "found": false
+              },
+              {
+                "fact": "Draft - not yet released",
+                "found": false
+              }
+            ],
+            "must_mention_recall": 0.0,
+            "hallucinated": {
+              "total": 0,
+              "ungrounded": 0,
+              "not_in_truth": 0,
+              "duplicate": 0
+            }
+          },
+          {
+            "source": "sample_erp_manual.pptx",
+            "slide": 3,
+            "chunk": true,
+            "error_type": null,
+            "expects_visual_call": true,
+            "visual_call_status": "ok",
+            "image_blocks": [
+              {
+                "shape_name": "Screen PUR-120",
+                "truth_role": "main_screenshot",
+                "predicted_role": "main_screenshot",
+                "described": true,
+                "correct": true
+              },
+              {
+                "shape_name": "Detail PUR-120",
+                "truth_role": "detail_crop",
+                "predicted_role": "detail_crop",
+                "described": true,
+                "correct": true
+              }
+            ],
+            "role_correct": 2,
+            "must_mention": [
+              {
+                "fact": "12.75",
+                "found": false
+              },
+              {
+                "fact": "2,971.50",
+                "found": true
+              }
+            ],
+            "must_mention_recall": 0.5,
+            "hallucinated": {
+              "total": 0,
+              "ungrounded": 0,
+              "not_in_truth": 0,
+              "duplicate": 0
+            }
+          },
+          {
+            "source": "sample_erp_manual.pptx",
+            "slide": 4,
+            "chunk": true,
+            "error_type": null,
+            "expects_visual_call": true,
+            "visual_call_status": "ok",
+            "image_blocks": [
+              {
+                "shape_name": "Icon release",
+                "truth_role": "ui_icon",
+                "predicted_role": "ui_icon",
+                "described": true,
+                "correct": true
+              },
+              {
+                "shape_name": "Dialog capture",
+                "truth_role": "inline_image",
+                "predicted_role": "inline_image",
+                "described": true,
+                "correct": true
+              },
+              {
+                "shape_name": "Screen PUR-100",
+                "truth_role": "main_screenshot",
+                "predicted_role": "main_screenshot",
+                "described": true,
+                "correct": true
+              }
+            ],
+            "role_correct": 3,
+            "must_mention": [
+              {
+                "fact": "Release order PO-1050 to the vendor?",
+                "found": false
+              }
+            ],
+            "must_mention_recall": 0.0,
+            "hallucinated": {
+              "total": 0,
+              "ungrounded": 0,
+              "not_in_truth": 0,
+              "duplicate": 0
+            }
+          },
+          {
+            "source": "sample_erp_manual.pptx",
+            "slide": 5,
+            "chunk": true,
+            "error_type": null,
+            "expects_visual_call": true,
+            "visual_call_status": "ok",
+            "image_blocks": [
+              {
+                "shape_name": "Screen PUR-300",
+                "truth_role": "main_screenshot",
+                "predicted_role": "main_screenshot",
+                "described": true,
+                "correct": true
+              }
+            ],
+            "role_correct": 1,
+            "must_mention": [
+              {
+                "fact": "Overdue orders: 4",
+                "found": false
+              }
+            ],
+            "must_mention_recall": 0.0,
+            "hallucinated": {
+              "total": 0,
+              "ungrounded": 0,
+              "not_in_truth": 0,
+              "duplicate": 0
+            }
+          },
+          {
+            "source": "sample_erp_manual.pptx",
+            "slide": 6,
+            "chunk": true,
+            "error_type": null,
+            "expects_visual_call": false,
+            "visual_call_status": "skipped",
+            "image_blocks": [],
+            "role_correct": 0,
+            "must_mention": [],
+            "must_mention_recall": null,
+            "hallucinated": {
+              "total": 0,
+              "ungrounded": 0,
+              "not_in_truth": 0,
+              "duplicate": 0
+            }
+          }
+        ]
+      },
+      "baseline": {
+        "documents": 1,
+        "failed_documents": 0,
+        "slides": 6,
+        "image_role": {
+          "blocks": 7,
+          "described": 0,
+          "correct": 0,
+          "accuracy": 0.0,
+          "confusion": {
+            "detail_crop": {
+              "missing": 1
+            },
+            "inline_image": {
+              "missing": 1
+            },
+            "main_screenshot": {
+              "missing": 4
+            },
+            "ui_icon": {
+              "missing": 1
+            }
+          }
+        },
+        "must_mention": {
+          "facts": 6,
+          "found": 0,
+          "recall": 0.0,
+          "slide_mean_recall": 0.0
+        },
+        "hallucinated_blocks": {
+          "total": 0,
+          "ungrounded": 0,
+          "not_in_truth": 0,
+          "duplicate": 0
+        },
+        "visual_calls": {
+          "expected": 4,
+          "ok": 0
+        },
+        "per_slide": [
+          {
+            "source": "sample_erp_manual.pptx",
+            "slide": 1,
+            "chunk": true,
+            "error_type": null,
+            "expects_visual_call": false,
+            "visual_call_status": "skipped",
+            "image_blocks": [],
+            "role_correct": 0,
+            "must_mention": [],
+            "must_mention_recall": null,
+            "hallucinated": {
+              "total": 0,
+              "ungrounded": 0,
+              "not_in_truth": 0,
+              "duplicate": 0
+            }
+          },
+          {
+            "source": "sample_erp_manual.pptx",
+            "slide": 2,
+            "chunk": true,
+            "error_type": null,
+            "expects_visual_call": true,
+            "visual_call_status": "empty",
+            "image_blocks": [
+              {
+                "shape_name": "Screen PUR-110",
+                "truth_role": "main_screenshot",
+                "predicted_role": null,
+                "described": false,
+                "correct": false
+              }
+            ],
+            "role_correct": 0,
+            "must_mention": [
+              {
+                "fact": "V-2864",
+                "found": false
+              },
+              {
+                "fact": "Draft - not yet released",
+                "found": false
+              }
+            ],
+            "must_mention_recall": 0.0,
+            "hallucinated": {
+              "total": 0,
+              "ungrounded": 0,
+              "not_in_truth": 0,
+              "duplicate": 0
+            }
+          },
+          {
+            "source": "sample_erp_manual.pptx",
+            "slide": 3,
+            "chunk": true,
+            "error_type": null,
+            "expects_visual_call": true,
+            "visual_call_status": "empty",
+            "image_blocks": [
+              {
+                "shape_name": "Screen PUR-120",
+                "truth_role": "main_screenshot",
+                "predicted_role": null,
+                "described": false,
+                "correct": false
+              },
+              {
+                "shape_name": "Detail PUR-120",
+                "truth_role": "detail_crop",
+                "predicted_role": null,
+                "described": false,
+                "correct": false
+              }
+            ],
+            "role_correct": 0,
+            "must_mention": [
+              {
+                "fact": "12.75",
+                "found": false
+              },
+              {
+                "fact": "2,971.50",
+                "found": false
+              }
+            ],
+            "must_mention_recall": 0.0,
+            "hallucinated": {
+              "total": 0,
+              "ungrounded": 0,
+              "not_in_truth": 0,
+              "duplicate": 0
+            }
+          },
+          {
+            "source": "sample_erp_manual.pptx",
+            "slide": 4,
+            "chunk": true,
+            "error_type": null,
+            "expects_visual_call": true,
+            "visual_call_status": "empty",
+            "image_blocks": [
+              {
+                "shape_name": "Icon release",
+                "truth_role": "ui_icon",
+                "predicted_role": null,
+                "described": false,
+                "correct": false
+              },
+              {
+                "shape_name": "Dialog capture",
+                "truth_role": "inline_image",
+                "predicted_role": null,
+                "described": false,
+                "correct": false
+              },
+              {
+                "shape_name": "Screen PUR-100",
+                "truth_role": "main_screenshot",
+                "predicted_role": null,
+                "described": false,
+                "correct": false
+              }
+            ],
+            "role_correct": 0,
+            "must_mention": [
+              {
+                "fact": "Release order PO-1050 to the vendor?",
+                "found": false
+              }
+            ],
+            "must_mention_recall": 0.0,
+            "hallucinated": {
+              "total": 0,
+              "ungrounded": 0,
+              "not_in_truth": 0,
+              "duplicate": 0
+            }
+          },
+          {
+            "source": "sample_erp_manual.pptx",
+            "slide": 5,
+            "chunk": true,
+            "error_type": null,
+            "expects_visual_call": true,
+            "visual_call_status": "empty",
+            "image_blocks": [
+              {
+                "shape_name": "Screen PUR-300",
+                "truth_role": "main_screenshot",
+                "predicted_role": null,
+                "described": false,
+                "correct": false
+              }
+            ],
+            "role_correct": 0,
+            "must_mention": [
+              {
+                "fact": "Overdue orders: 4",
+                "found": false
+              }
+            ],
+            "must_mention_recall": 0.0,
+            "hallucinated": {
+              "total": 0,
+              "ungrounded": 0,
+              "not_in_truth": 0,
+              "duplicate": 0
+            }
+          },
+          {
+            "source": "sample_erp_manual.pptx",
+            "slide": 6,
+            "chunk": true,
+            "error_type": null,
+            "expects_visual_call": false,
+            "visual_call_status": "skipped",
+            "image_blocks": [],
+            "role_correct": 0,
+            "must_mention": [],
+            "must_mention_recall": null,
+            "hallucinated": {
+              "total": 0,
+              "ungrounded": 0,
+              "not_in_truth": 0,
+              "duplicate": 0
+            }
+          }
+        ]
+      }
+    },
+    "docx": {
+      "vlm": {
+        "documents": 1,
+        "failed_documents": 0,
+        "page_count": {
+          "documents": 1,
+          "correct": 1,
+          "accuracy": 1.0
+        },
+        "row_page": {
+          "tables": 1,
+          "rows": 44,
+          "correct": 44,
+          "accuracy": 1.0
+        },
+        "image_must_mention": {
+          "pages": 3,
+          "facts": 8,
+          "found": 6,
+          "recall": 0.75,
+          "page_mean_recall": 0.666667
+        },
+        "per_document": [
+          {
+            "source": "lantern_spec.docx",
+            "error_type": null,
+            "truth_pages": 4,
+            "predicted_pages": 4,
+            "page_count_correct": true
+          }
+        ],
+        "per_table": [
+          {
+            "source": "lantern_spec.docx",
+            "table_id": "t1",
+            "rows": 44,
+            "correct": 44,
+            "accuracy": 1.0,
+            "missing": 0,
+            "on_several_pages": 0,
+            "unexpected_rows": 0,
+            "assignment": {
+              "vlm": 2
+            }
+          }
+        ],
+        "per_page": [
+          {
+            "source": "lantern_spec.docx",
+            "page": 1,
+            "figures": [
+              "fig1"
+            ],
+            "must_mention": [
+              {
+                "fact": "glass globe",
+                "found": true
+              },
+              {
+                "fact": "LED module",
+                "found": true
+              },
+              {
+                "fact": "battery cover",
+                "found": true
+              }
+            ],
+            "recall": 1.0
+          },
+          {
+            "source": "lantern_spec.docx",
+            "page": 2,
+            "figures": [
+              "fig2"
+            ],
+            "must_mention": [
+              {
+                "fact": "charge controller",
+                "found": true
+              },
+              {
+                "fact": "5 V / 2 A",
+                "found": true
+              },
+              {
+                "fact": "LED driver",
+                "found": true
+              }
+            ],
+            "recall": 1.0
+          },
+          {
+            "source": "lantern_spec.docx",
+            "page": 4,
+            "figures": [
+              "fig3"
+            ],
+            "must_mention": [
+              {
+                "fact": "green status ring",
+                "found": false
+              },
+              {
+                "fact": "carry hook",
+                "found": false
+              }
+            ],
+            "recall": 0.0
+          }
+        ]
+      },
+      "baseline": {
+        "documents": 1,
+        "failed_documents": 0,
+        "page_count": {
+          "documents": 1,
+          "correct": 1,
+          "accuracy": 1.0
+        },
+        "row_page": {
+          "tables": 1,
+          "rows": 44,
+          "correct": 44,
+          "accuracy": 1.0
+        },
+        "image_must_mention": {
+          "pages": 3,
+          "facts": 8,
+          "found": 2,
+          "recall": 0.25,
+          "page_mean_recall": 0.222222
+        },
+        "per_document": [
+          {
+            "source": "lantern_spec.docx",
+            "error_type": null,
+            "truth_pages": 4,
+            "predicted_pages": 4,
+            "page_count_correct": true
+          }
+        ],
+        "per_table": [
+          {
+            "source": "lantern_spec.docx",
+            "table_id": "t1",
+            "rows": 44,
+            "correct": 44,
+            "accuracy": 1.0,
+            "missing": 0,
+            "on_several_pages": 0,
+            "unexpected_rows": 0,
+            "assignment": {
+              "xml_row_markers": 2
+            }
+          }
+        ],
+        "per_page": [
+          {
+            "source": "lantern_spec.docx",
+            "page": 1,
+            "figures": [
+              "fig1"
+            ],
+            "must_mention": [
+              {
+                "fact": "glass globe",
+                "found": false
+              },
+              {
+                "fact": "LED module",
+                "found": false
+              },
+              {
+                "fact": "battery cover",
+                "found": false
+              }
+            ],
+            "recall": 0.0
+          },
+          {
+            "source": "lantern_spec.docx",
+            "page": 2,
+            "figures": [
+              "fig2"
+            ],
+            "must_mention": [
+              {
+                "fact": "charge controller",
+                "found": true
+              },
+              {
+                "fact": "5 V / 2 A",
+                "found": false
+              },
+              {
+                "fact": "LED driver",
+                "found": true
+              }
+            ],
+            "recall": 0.666667
+          },
+          {
+            "source": "lantern_spec.docx",
+            "page": 4,
+            "figures": [
+              "fig3"
+            ],
+            "must_mention": [
+              {
+                "fact": "green status ring",
+                "found": false
+              },
+              {
+                "fact": "carry hook",
+                "found": false
+              }
+            ],
+            "recall": 0.0
+          }
+        ]
+      }
+    },
+    "retrieval": {
+      "vlm@cap": {
+        "index": {
+          "chunks": 14,
+          "pages": 14,
+          "k1": 1.2,
+          "b": 0.75
+        },
+        "overall": {
+          "queries": 18,
+          "recall@1": 0.833333,
+          "recall@3": 1.0,
+          "recall@5": 1.0,
+          "mrr": 0.916667
+        },
+        "by_doc_type": {
+          "docx": {
+            "queries": 4,
+            "recall@1": 1.0,
+            "recall@3": 1.0,
+            "recall@5": 1.0,
+            "mrr": 1.0
+          },
+          "drawing": {
+            "queries": 9,
+            "recall@1": 0.777778,
+            "recall@3": 1.0,
+            "recall@5": 1.0,
+            "mrr": 0.888889
+          },
+          "slides": {
+            "queries": 5,
+            "recall@1": 0.8,
+            "recall@3": 1.0,
+            "recall@5": 1.0,
+            "mrr": 0.9
+          }
+        },
+        "skipped_queries": [],
+        "per_query": [
+          {
+            "query": "In which revision was the vent hole diameter of the lantern housing increased to 3.2?",
+            "doc_type": "drawing",
+            "relevant": [
+              "lantern_housing.pdf#p1"
+            ],
+            "first_relevant_rank": 1,
+            "reciprocal_rank": 1.0,
+            "recall": {
+              "@1": 1.0,
+              "@3": 1.0,
+              "@5": 1.0
+            },
+            "top": [
+              "lantern_housing.pdf#p1",
+              "lantern_housing.pdf#p2",
+              "lantern_spec.docx#p2",
+              "lantern_spec.docx#p1",
+              "lantern_reflector_scan.pdf#p1"
+            ]
+          },
+          {
+            "query": "When was the surface finish of the lantern housing changed to matte black?",
+            "doc_type": "drawing",
+            "relevant": [
+              "lantern_housing.pdf#p1"
+            ],
+            "first_relevant_rank": 2,
+            "reciprocal_rank": 0.5,
+            "recall": {
+              "@1": 0.0,
+              "@3": 1.0,
+              "@5": 1.0
+            },
+            "top": [
+              "lantern_housing.pdf#p2",
+              "lantern_housing.pdf#p1",
+              "lantern_reflector_scan.pdf#p1",
+              "lantern_bracket.pdf#p1",
+              "lantern_spec.docx#p2"
+            ]
+          },
+          {
+            "query": "What is the initial release date of the lantern housing drawing?",
+            "doc_type": "drawing",
+            "relevant": [
+              "lantern_housing.pdf#p1"
+            ],
+            "first_relevant_rank": 2,
+            "reciprocal_rank": 0.5,
+            "recall": {
+              "@1": 0.0,
+              "@3": 1.0,
+              "@5": 1.0
+            },
+            "top": [
+              "lantern_housing.pdf#p2",
+              "lantern_housing.pdf#p1",
+              "lantern_bracket.pdf#p1",
+              "lantern_reflector_scan.pdf#p1",
+              "lantern_spec.docx#p2"
+            ]
+          },
+          {
+            "query": "What material is the reflector of the Outdoor Lantern L-300 made of?",
+            "doc_type": "drawing",
+            "relevant": [
+              "lantern_reflector_scan.pdf#p1"
+            ],
+            "first_relevant_rank": 1,
+            "reciprocal_rank": 1.0,
+            "recall": {
+              "@1": 1.0,
+              "@3": 1.0,
+              "@5": 1.0
+            },
+            "top": [
+              "lantern_reflector_scan.pdf#p1",
+              "lantern_spec.docx#p1",
+              "lantern_bracket.pdf#p1",
+              "lantern_spec.docx#p2",
+              "lantern_housing.pdf#p2"
+            ]
+          },
+          {
+            "query": "Which drawing number identifies the lantern reflector?",
+            "doc_type": "drawing",
+            "relevant": [
+              "lantern_reflector_scan.pdf#p1"
+            ],
+            "first_relevant_rank": 1,
+            "reciprocal_rank": 1.0,
+            "recall": {
+              "@1": 1.0,
+              "@3": 1.0,
+              "@5": 1.0
+            },
+            "top": [
+              "lantern_reflector_scan.pdf#p1",
+              "lantern_spec.docx#p2",
+              "lantern_bracket.pdf#p1",
+              "lantern_housing.pdf#p2",
+              "lantern_housing.pdf#p1"
+            ]
+          },
+          {
+            "query": "What surface finish does the lantern reflector get?",
+            "doc_type": "drawing",
+            "relevant": [
+              "lantern_reflector_scan.pdf#p1"
+            ],
+            "first_relevant_rank": 1,
+            "reciprocal_rank": 1.0,
+            "recall": {
+              "@1": 1.0,
+              "@3": 1.0,
+              "@5": 1.0
+            },
+            "top": [
+              "lantern_reflector_scan.pdf#p1",
+              "lantern_housing.pdf#p2",
+              "lantern_housing.pdf#p1",
+              "lantern_bracket.pdf#p1",
+              "lantern_spec.docx#p4"
+            ]
+          },
+          {
+            "query": "Which stainless steel grade is used for the lantern mounting bracket?",
+            "doc_type": "drawing",
+            "relevant": [
+              "lantern_bracket.pdf#p1"
+            ],
+            "first_relevant_rank": 1,
+            "reciprocal_rank": 1.0,
+            "recall": {
+              "@1": 1.0,
+              "@3": 1.0,
+              "@5": 1.0
+            },
+            "top": [
+              "lantern_bracket.pdf#p1",
+              "sample_erp_manual.pptx#p3",
+              "lantern_spec.docx#p2",
+              "lantern_spec.docx#p4",
+              "lantern_spec.docx#p1"
+            ]
+          },
+          {
+            "query": "How is the surface of the lantern mounting bracket finished?",
+            "doc_type": "drawing",
+            "relevant": [
+              "lantern_bracket.pdf#p1"
+            ],
+            "first_relevant_rank": 1,
+            "reciprocal_rank": 1.0,
+            "recall": {
+              "@1": 1.0,
+              "@3": 1.0,
+              "@5": 1.0
+            },
+            "top": [
+              "lantern_bracket.pdf#p1",
+              "lantern_spec.docx#p4",
+              "lantern_spec.docx#p1",
+              "lantern_housing.pdf#p1",
+              "lantern_housing.pdf#p2"
+            ]
+          },
+          {
+            "query": "What is the mass of the lantern mounting bracket?",
+            "doc_type": "drawing",
+            "relevant": [
+              "lantern_bracket.pdf#p1"
+            ],
+            "first_relevant_rank": 1,
+            "reciprocal_rank": 1.0,
+            "recall": {
+              "@1": 1.0,
+              "@3": 1.0,
+              "@5": 1.0
+            },
+            "top": [
+              "lantern_bracket.pdf#p1",
+              "lantern_spec.docx#p1",
+              "lantern_housing.pdf#p1",
+              "lantern_housing.pdf#p2",
+              "lantern_reflector_scan.pdf#p1"
+            ]
+          },
+          {
+            "query": "Which vendor is entered on the purchase order entry screen?",
+            "doc_type": "slides",
+            "relevant": [
+              "sample_erp_manual.pptx#p2"
+            ],
+            "first_relevant_rank": 1,
+            "reciprocal_rank": 1.0,
+            "recall": {
+              "@1": 1.0,
+              "@3": 1.0,
+              "@5": 1.0
+            },
+            "top": [
+              "sample_erp_manual.pptx#p2",
+              "sample_erp_manual.pptx#p5",
+              "sample_erp_manual.pptx#p4",
+              "sample_erp_manual.pptx#p3",
+              "sample_erp_manual.pptx#p6"
+            ]
+          },
+          {
+            "query": "What does the status bar show for a new purchase order before it is released?",
+            "doc_type": "slides",
+            "relevant": [
+              "sample_erp_manual.pptx#p2"
+            ],
+            "first_relevant_rank": 2,
+            "reciprocal_rank": 0.5,
+            "recall": {
+              "@1": 0.0,
+              "@3": 1.0,
+              "@5": 1.0
+            },
+            "top": [
+              "sample_erp_manual.pptx#p5",
+              "sample_erp_manual.pptx#p2",
+              "sample_erp_manual.pptx#p4",
+              "sample_erp_manual.pptx#p3",
+              "lantern_spec.docx#p4"
+            ]
+          },
+          {
+            "query": "What unit price is shown for the lantern housing order line?",
+            "doc_type": "slides",
+            "relevant": [
+              "sample_erp_manual.pptx#p3"
+            ],
+            "first_relevant_rank": 1,
+            "reciprocal_rank": 1.0,
+            "recall": {
+              "@1": 1.0,
+              "@3": 1.0,
+              "@5": 1.0
+            },
+            "top": [
+              "sample_erp_manual.pptx#p3",
+              "sample_erp_manual.pptx#p4",
+              "lantern_spec.docx#p4",
+              "lantern_housing.pdf#p1",
+              "lantern_housing.pdf#p2"
+            ]
+          },
+          {
+            "query": "What question does the release confirmation dialog ask?",
+            "doc_type": "slides",
+            "relevant": [
+              "sample_erp_manual.pptx#p4"
+            ],
+            "first_relevant_rank": 1,
+            "reciprocal_rank": 1.0,
+            "recall": {
+              "@1": 1.0,
+              "@3": 1.0,
+              "@5": 1.0
+            },
+            "top": [
+              "sample_erp_manual.pptx#p4",
+              "sample_erp_manual.pptx#p6",
+              "sample_erp_manual.pptx#p2",
+              "sample_erp_manual.pptx#p3",
+              "sample_erp_manual.pptx#p5"
+            ]
+          },
+          {
+            "query": "How many open orders are flagged as overdue in the report?",
+            "doc_type": "slides",
+            "relevant": [
+              "sample_erp_manual.pptx#p5"
+            ],
+            "first_relevant_rank": 1,
+            "reciprocal_rank": 1.0,
+            "recall": {
+              "@1": 1.0,
+              "@3": 1.0,
+              "@5": 1.0
+            },
+            "top": [
+              "sample_erp_manual.pptx#p5",
+              "sample_erp_manual.pptx#p2",
+              "sample_erp_manual.pptx#p4",
+              "lantern_spec.docx#p1",
+              "lantern_spec.docx#p4"
+            ]
+          },
+          {
+            "query": "Which component sits directly below the glass globe in the exploded view of the lantern?",
+            "doc_type": "docx",
+            "relevant": [
+              "lantern_spec.docx#p1"
+            ],
+            "first_relevant_rank": 1,
+            "reciprocal_rank": 1.0,
+            "recall": {
+              "@1": 1.0,
+              "@3": 1.0,
+              "@5": 1.0
+            },
+            "top": [
+              "lantern_spec.docx#p1",
+              "sample_erp_manual.pptx#p3",
+              "lantern_spec.docx#p2",
+              "lantern_spec.docx#p4",
+              "lantern_spec.docx#p3"
+            ]
+          },
+          {
+            "query": "What is the maximum charging input of the L-300 lantern?",
+            "doc_type": "docx",
+            "relevant": [
+              "lantern_spec.docx#p2"
+            ],
+            "first_relevant_rank": 1,
+            "reciprocal_rank": 1.0,
+            "recall": {
+              "@1": 1.0,
+              "@3": 1.0,
+              "@5": 1.0
+            },
+            "top": [
+              "lantern_spec.docx#p2",
+              "lantern_spec.docx#p1",
+              "lantern_bracket.pdf#p1",
+              "lantern_housing.pdf#p1",
+              "lantern_housing.pdf#p2"
+            ]
+          },
+          {
+            "query": "In the power path diagram, which block does the USB-C input feed?",
+            "doc_type": "docx",
+            "relevant": [
+              "lantern_spec.docx#p2"
+            ],
+            "first_relevant_rank": 1,
+            "reciprocal_rank": 1.0,
+            "recall": {
+              "@1": 1.0,
+              "@3": 1.0,
+              "@5": 1.0
+            },
+            "top": [
+              "lantern_spec.docx#p2",
+              "lantern_spec.docx#p1",
+              "lantern_housing.pdf#p2",
+              "lantern_housing.pdf#p1",
+              "lantern_reflector_scan.pdf#p1"
+            ]
+          },
+          {
+            "query": "What colour is the status ring on the lantern in the product photograph?",
+            "doc_type": "docx",
+            "relevant": [
+              "lantern_spec.docx#p4"
+            ],
+            "first_relevant_rank": 1,
+            "reciprocal_rank": 1.0,
+            "recall": {
+              "@1": 1.0,
+              "@3": 1.0,
+              "@5": 1.0
+            },
+            "top": [
+              "lantern_spec.docx#p4",
+              "lantern_spec.docx#p2",
+              "sample_erp_manual.pptx#p2",
+              "lantern_housing.pdf#p2",
+              "lantern_housing.pdf#p1"
+            ]
+          }
+        ]
+      },
+      "baseline": {
+        "index": {
+          "chunks": 14,
+          "pages": 14,
+          "k1": 1.2,
+          "b": 0.75
+        },
+        "overall": {
+          "queries": 18,
+          "recall@1": 0.388889,
+          "recall@3": 0.666667,
+          "recall@5": 0.833333,
+          "mrr": 0.562566
+        },
+        "by_doc_type": {
+          "docx": {
+            "queries": 4,
+            "recall@1": 0.75,
+            "recall@3": 1.0,
+            "recall@5": 1.0,
+            "mrr": 0.875
+          },
+          "drawing": {
+            "queries": 9,
+            "recall@1": 0.111111,
+            "recall@3": 0.444444,
+            "recall@5": 0.777778,
+            "mrr": 0.35
+          },
+          "slides": {
+            "queries": 5,
+            "recall@1": 0.6,
+            "recall@3": 0.8,
+            "recall@5": 0.8,
+            "mrr": 0.695238
+          }
+        },
+        "skipped_queries": [],
+        "per_query": [
+          {
+            "query": "In which revision was the vent hole diameter of the lantern housing increased to 3.2?",
+            "doc_type": "drawing",
+            "relevant": [
+              "lantern_housing.pdf#p1"
+            ],
+            "first_relevant_rank": 1,
+            "reciprocal_rank": 1.0,
+            "recall": {
+              "@1": 1.0,
+              "@3": 1.0,
+              "@5": 1.0
+            },
+            "top": [
+              "lantern_housing.pdf#p1",
+              "lantern_spec.docx#p1",
+              "lantern_spec.docx#p2",
+              "lantern_housing.pdf#p2",
+              "lantern_spec.docx#p4"
+            ]
+          },
+          {
+            "query": "When was the surface finish of the lantern housing changed to matte black?",
+            "doc_type": "drawing",
+            "relevant": [
+              "lantern_housing.pdf#p1"
+            ],
+            "first_relevant_rank": 2,
+            "reciprocal_rank": 0.5,
+            "recall": {
+              "@1": 0.0,
+              "@3": 1.0,
+              "@5": 1.0
+            },
+            "top": [
+              "lantern_housing.pdf#p2",
+              "lantern_housing.pdf#p1",
+              "lantern_spec.docx#p1",
+              "lantern_bracket.pdf#p1",
+              "lantern_spec.docx#p2"
+            ]
+          },
+          {
+            "query": "What is the initial release date of the lantern housing drawing?",
+            "doc_type": "drawing",
+            "relevant": [
+              "lantern_housing.pdf#p1"
+            ],
+            "first_relevant_rank": 5,
+            "reciprocal_rank": 0.2,
+            "recall": {
+              "@1": 0.0,
+              "@3": 0.0,
+              "@5": 1.0
+            },
+            "top": [
+              "sample_erp_manual.pptx#p6",
+              "lantern_bracket.pdf#p1",
+              "lantern_spec.docx#p1",
+              "lantern_housing.pdf#p2",
+              "lantern_housing.pdf#p1"
+            ]
+          },
+          {
+            "query": "What material is the reflector of the Outdoor Lantern L-300 made of?",
+            "doc_type": "drawing",
+            "relevant": [
+              "lantern_reflector_scan.pdf#p1"
+            ],
+            "first_relevant_rank": 12,
+            "reciprocal_rank": 0.083333,
+            "recall": {
+              "@1": 0.0,
+              "@3": 0.0,
+              "@5": 0.0
+            },
+            "top": [
+              "lantern_spec.docx#p1",
+              "lantern_spec.docx#p2",
+              "lantern_housing.pdf#p2",
+              "lantern_housing.pdf#p1",
+              "lantern_bracket.pdf#p1"
+            ]
+          },
+          {
+            "query": "Which drawing number identifies the lantern reflector?",
+            "doc_type": "drawing",
+            "relevant": [
+              "lantern_reflector_scan.pdf#p1"
+            ],
+            "first_relevant_rank": 12,
+            "reciprocal_rank": 0.083333,
+            "recall": {
+              "@1": 0.0,
+              "@3": 0.0,
+              "@5": 0.0
+            },
+            "top": [
+              "lantern_spec.docx#p1",
+              "lantern_spec.docx#p2",
+              "lantern_housing.pdf#p2",
+              "lantern_housing.pdf#p1",
+              "lantern_spec.docx#p4"
+            ]
+          },
+          {
+            "query": "What surface finish does the lantern reflector get?",
+            "doc_type": "drawing",
+            "relevant": [
+              "lantern_reflector_scan.pdf#p1"
+            ],
+            "first_relevant_rank": 5,
+            "reciprocal_rank": 0.2,
+            "recall": {
+              "@1": 0.0,
+              "@3": 0.0,
+              "@5": 1.0
+            },
+            "top": [
+              "lantern_housing.pdf#p2",
+              "lantern_housing.pdf#p1",
+              "lantern_bracket.pdf#p1",
+              "lantern_spec.docx#p4",
+              "lantern_reflector_scan.pdf#p1"
+            ]
+          },
+          {
+            "query": "Which stainless steel grade is used for the lantern mounting bracket?",
+            "doc_type": "drawing",
+            "relevant": [
+              "lantern_bracket.pdf#p1"
+            ],
+            "first_relevant_rank": 4,
+            "reciprocal_rank": 0.25,
+            "recall": {
+              "@1": 0.0,
+              "@3": 0.0,
+              "@5": 1.0
+            },
+            "top": [
+              "lantern_spec.docx#p4",
+              "lantern_spec.docx#p1",
+              "lantern_spec.docx#p2",
+              "lantern_bracket.pdf#p1",
+              "sample_erp_manual.pptx#p6"
+            ]
+          },
+          {
+            "query": "How is the surface of the lantern mounting bracket finished?",
+            "doc_type": "drawing",
+            "relevant": [
+              "lantern_bracket.pdf#p1"
+            ],
+            "first_relevant_rank": 3,
+            "reciprocal_rank": 0.333333,
+            "recall": {
+              "@1": 0.0,
+              "@3": 1.0,
+              "@5": 1.0
+            },
+            "top": [
+              "lantern_spec.docx#p1",
+              "lantern_spec.docx#p4",
+              "lantern_bracket.pdf#p1",
+              "lantern_housing.pdf#p1",
+              "lantern_housing.pdf#p2"
+            ]
+          },
+          {
+            "query": "What is the mass of the lantern mounting bracket?",
+            "doc_type": "drawing",
+            "relevant": [
+              "lantern_bracket.pdf#p1"
+            ],
+            "first_relevant_rank": 2,
+            "reciprocal_rank": 0.5,
+            "recall": {
+              "@1": 0.0,
+              "@3": 1.0,
+              "@5": 1.0
+            },
+            "top": [
+              "lantern_spec.docx#p1",
+              "lantern_bracket.pdf#p1",
+              "lantern_spec.docx#p4",
+              "lantern_spec.docx#p2",
+              "lantern_housing.pdf#p1"
+            ]
+          },
+          {
+            "query": "Which vendor is entered on the purchase order entry screen?",
+            "doc_type": "slides",
+            "relevant": [
+              "sample_erp_manual.pptx#p2"
+            ],
+            "first_relevant_rank": 1,
+            "reciprocal_rank": 1.0,
+            "recall": {
+              "@1": 1.0,
+              "@3": 1.0,
+              "@5": 1.0
+            },
+            "top": [
+              "sample_erp_manual.pptx#p2",
+              "sample_erp_manual.pptx#p6",
+              "sample_erp_manual.pptx#p5",
+              "lantern_spec.docx#p4",
+              "sample_erp_manual.pptx#p4"
+            ]
+          },
+          {
+            "query": "What does the status bar show for a new purchase order before it is released?",
+            "doc_type": "slides",
+            "relevant": [
+              "sample_erp_manual.pptx#p2"
+            ],
+            "first_relevant_rank": 3,
+            "reciprocal_rank": 0.333333,
+            "recall": {
+              "@1": 0.0,
+              "@3": 1.0,
+              "@5": 1.0
+            },
+            "top": [
+              "lantern_spec.docx#p4",
+              "sample_erp_manual.pptx#p5",
+              "sample_erp_manual.pptx#p2",
+              "lantern_spec.docx#p1",
+              "sample_erp_manual.pptx#p1"
+            ]
+          },
+          {
+            "query": "What unit price is shown for the lantern housing order line?",
+            "doc_type": "slides",
+            "relevant": [
+              "sample_erp_manual.pptx#p3"
+            ],
+            "first_relevant_rank": 7,
+            "reciprocal_rank": 0.142857,
+            "recall": {
+              "@1": 0.0,
+              "@3": 0.0,
+              "@5": 0.0
+            },
+            "top": [
+              "lantern_spec.docx#p4",
+              "sample_erp_manual.pptx#p6",
+              "sample_erp_manual.pptx#p4",
+              "lantern_spec.docx#p1",
+              "lantern_housing.pdf#p1"
+            ]
+          },
+          {
+            "query": "What question does the release confirmation dialog ask?",
+            "doc_type": "slides",
+            "relevant": [
+              "sample_erp_manual.pptx#p4"
+            ],
+            "first_relevant_rank": 1,
+            "reciprocal_rank": 1.0,
+            "recall": {
+              "@1": 1.0,
+              "@3": 1.0,
+              "@5": 1.0
+            },
+            "top": [
+              "sample_erp_manual.pptx#p4",
+              "sample_erp_manual.pptx#p6",
+              "sample_erp_manual.pptx#p2",
+              "lantern_bracket.pdf#p1",
+              "lantern_spec.docx#p1"
+            ]
+          },
+          {
+            "query": "How many open orders are flagged as overdue in the report?",
+            "doc_type": "slides",
+            "relevant": [
+              "sample_erp_manual.pptx#p5"
+            ],
+            "first_relevant_rank": 1,
+            "reciprocal_rank": 1.0,
+            "recall": {
+              "@1": 1.0,
+              "@3": 1.0,
+              "@5": 1.0
+            },
+            "top": [
+              "sample_erp_manual.pptx#p5",
+              "sample_erp_manual.pptx#p2",
+              "lantern_spec.docx#p4",
+              "lantern_spec.docx#p1",
+              "sample_erp_manual.pptx#p1"
+            ]
+          },
+          {
+            "query": "Which component sits directly below the glass globe in the exploded view of the lantern?",
+            "doc_type": "docx",
+            "relevant": [
+              "lantern_spec.docx#p1"
+            ],
+            "first_relevant_rank": 1,
+            "reciprocal_rank": 1.0,
+            "recall": {
+              "@1": 1.0,
+              "@3": 1.0,
+              "@5": 1.0
+            },
+            "top": [
+              "lantern_spec.docx#p1",
+              "lantern_spec.docx#p2",
+              "lantern_spec.docx#p4",
+              "lantern_spec.docx#p3",
+              "lantern_housing.pdf#p1"
+            ]
+          },
+          {
+            "query": "What is the maximum charging input of the L-300 lantern?",
+            "doc_type": "docx",
+            "relevant": [
+              "lantern_spec.docx#p2"
+            ],
+            "first_relevant_rank": 2,
+            "reciprocal_rank": 0.5,
+            "recall": {
+              "@1": 0.0,
+              "@3": 1.0,
+              "@5": 1.0
+            },
+            "top": [
+              "lantern_spec.docx#p1",
+              "lantern_spec.docx#p2",
+              "lantern_spec.docx#p4",
+              "lantern_housing.pdf#p1",
+              "lantern_housing.pdf#p2"
+            ]
+          },
+          {
+            "query": "In the power path diagram, which block does the USB-C input feed?",
+            "doc_type": "docx",
+            "relevant": [
+              "lantern_spec.docx#p2"
+            ],
+            "first_relevant_rank": 1,
+            "reciprocal_rank": 1.0,
+            "recall": {
+              "@1": 1.0,
+              "@3": 1.0,
+              "@5": 1.0
+            },
+            "top": [
+              "lantern_spec.docx#p2",
+              "lantern_reflector_scan.pdf#p1",
+              "lantern_bracket.pdf#p1",
+              "lantern_housing.pdf#p2",
+              "lantern_housing.pdf#p1"
+            ]
+          },
+          {
+            "query": "What colour is the status ring on the lantern in the product photograph?",
+            "doc_type": "docx",
+            "relevant": [
+              "lantern_spec.docx#p4"
+            ],
+            "first_relevant_rank": 1,
+            "reciprocal_rank": 1.0,
+            "recall": {
+              "@1": 1.0,
+              "@3": 1.0,
+              "@5": 1.0
+            },
+            "top": [
+              "lantern_spec.docx#p4",
+              "lantern_spec.docx#p2",
+              "lantern_spec.docx#p1",
+              "lantern_housing.pdf#p1",
+              "sample_erp_manual.pptx#p5"
+            ]
+          }
+        ],
+        "model_free_substitutes": [
+          "lantern_bracket.pdf",
+          "lantern_housing.pdf",
+          "lantern_reflector_scan.pdf"
+        ]
+      }
+    }
+  },
+  "cost": [
+    {
+      "run": "vlm/drawing@cap",
+      "mode": "vlm",
+      "technique": "drawing",
+      "variant": "cap",
+      "backend": "azure",
+      "documents": 3,
+      "failed": 0,
+      "calls": 9,
+      "cached": 0,
+      "max_image_pixels": 3999912,
+      "reasoning_effort": {
+        "drawing.normalize": [
+          "low"
+        ],
+        "drawing.table": [
+          "low"
+        ],
+        "drawing.vision": [
+          "low"
+        ]
+      },
+      "input_tokens": 333491,
+      "output_tokens": 6900,
+      "reasoning_tokens": 693,
+      "total_tokens": 340391,
+      "model_latency_s": 71.663,
+      "wall_time_s": 60.691,
+      "per_task": {
+        "drawing.normalize": {
+          "calls": 3,
+          "cached": 0,
+          "latency_s": 16.307,
+          "input_tokens": 7875,
+          "output_tokens": 2137,
+          "reasoning_tokens": 141,
+          "total_tokens": 10012
+        },
+        "drawing.table": {
+          "calls": 3,
+          "cached": 0,
+          "latency_s": 27.613,
+          "input_tokens": 118269,
+          "output_tokens": 2596,
+          "reasoning_tokens": 388,
+          "total_tokens": 120865
+        },
+        "drawing.vision": {
+          "calls": 3,
+          "cached": 0,
+          "latency_s": 27.743,
+          "input_tokens": 207347,
+          "output_tokens": 2167,
+          "reasoning_tokens": 164,
+          "total_tokens": 209514
+        }
+      },
+      "per_document": [
+        {
+          "source": "lantern_housing.pdf",
+          "error_type": null,
+          "wall_time_s": 21.98,
+          "calls": 3,
+          "cached": 0,
+          "input_tokens": 111827,
+          "output_tokens": 2565,
+          "reasoning_tokens": 401
+        },
+        {
+          "source": "lantern_reflector_scan.pdf",
+          "error_type": null,
+          "wall_time_s": 18.591,
+          "calls": 3,
+          "cached": 0,
+          "input_tokens": 110436,
+          "output_tokens": 2147,
+          "reasoning_tokens": 119
+        },
+        {
+          "source": "lantern_bracket.pdf",
+          "error_type": null,
+          "wall_time_s": 20.12,
+          "calls": 3,
+          "cached": 0,
+          "input_tokens": 111228,
+          "output_tokens": 2188,
+          "reasoning_tokens": 173
+        }
+      ]
+    },
+    {
+      "run": "vlm/slides",
+      "mode": "vlm",
+      "technique": "slides",
+      "variant": null,
+      "backend": "azure",
+      "documents": 1,
+      "failed": 0,
+      "calls": 4,
+      "cached": 0,
+      "max_image_pixels": 3241350,
+      "reasoning_effort": {
+        "slides.visual": [
+          "low"
+        ]
+      },
+      "input_tokens": 22046,
+      "output_tokens": 1289,
+      "reasoning_tokens": 0,
+      "total_tokens": 23335,
+      "model_latency_s": 18.993,
+      "wall_time_s": 10.451,
+      "per_task": {
+        "slides.visual": {
+          "calls": 4,
+          "cached": 0,
+          "latency_s": 18.993,
+          "input_tokens": 22046,
+          "output_tokens": 1289,
+          "reasoning_tokens": 0,
+          "total_tokens": 23335
+        }
+      },
+      "per_document": [
+        {
+          "source": "sample_erp_manual.pptx",
+          "error_type": null,
+          "wall_time_s": 10.451,
+          "calls": 4,
+          "cached": 0,
+          "input_tokens": 22046,
+          "output_tokens": 1289,
+          "reasoning_tokens": 0
+        }
+      ]
+    },
+    {
+      "run": "vlm/docx",
+      "mode": "vlm",
+      "technique": "docx",
+      "variant": null,
+      "backend": "azure",
+      "documents": 1,
+      "failed": 0,
+      "calls": 4,
+      "cached": 0,
+      "max_image_pixels": 4680287,
+      "reasoning_effort": {
+        "docx.image_description": [
+          "low"
+        ],
+        "docx.table_distribution": [
+          "medium"
+        ]
+      },
+      "input_tokens": 31456,
+      "output_tokens": 746,
+      "reasoning_tokens": 163,
+      "total_tokens": 32202,
+      "model_latency_s": 20.081,
+      "wall_time_s": 13.634,
+      "per_task": {
+        "docx.image_description": {
+          "calls": 3,
+          "cached": 0,
+          "latency_s": 12.059,
+          "input_tokens": 17673,
+          "output_tokens": 482,
+          "reasoning_tokens": 43,
+          "total_tokens": 18155
+        },
+        "docx.table_distribution": {
+          "calls": 1,
+          "cached": 0,
+          "latency_s": 8.022,
+          "input_tokens": 13783,
+          "output_tokens": 264,
+          "reasoning_tokens": 120,
+          "total_tokens": 14047
+        }
+      },
+      "per_document": [
+        {
+          "source": "lantern_spec.docx",
+          "error_type": null,
+          "wall_time_s": 13.634,
+          "calls": 4,
+          "cached": 0,
+          "input_tokens": 31456,
+          "output_tokens": 746,
+          "reasoning_tokens": 163
+        }
+      ]
+    },
+    {
+      "run": "baseline/drawing@cap",
+      "mode": "baseline",
+      "technique": "drawing",
+      "variant": "cap",
+      "backend": "null",
+      "documents": 3,
+      "failed": 3,
+      "calls": 9,
+      "cached": 0,
+      "max_image_pixels": 3999912,
+      "reasoning_effort": {
+        "drawing.normalize": [
+          "low"
+        ],
+        "drawing.table": [
+          "low"
+        ],
+        "drawing.vision": [
+          "low"
+        ]
+      },
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "reasoning_tokens": 0,
+      "total_tokens": 0,
+      "model_latency_s": 0.0,
+      "wall_time_s": 15.044,
+      "per_task": {
+        "drawing.normalize": {
+          "calls": 3,
+          "cached": 0,
+          "latency_s": 0.0,
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "reasoning_tokens": 0,
+          "total_tokens": 0
+        },
+        "drawing.table": {
+          "calls": 3,
+          "cached": 0,
+          "latency_s": 0.0,
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "reasoning_tokens": 0,
+          "total_tokens": 0
+        },
+        "drawing.vision": {
+          "calls": 3,
+          "cached": 0,
+          "latency_s": 0.0,
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "reasoning_tokens": 0,
+          "total_tokens": 0
+        }
+      },
+      "per_document": [
+        {
+          "source": "lantern_housing.pdf",
+          "error_type": "TitleBlockGateError",
+          "wall_time_s": 5.188,
+          "calls": 3,
+          "cached": 0,
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "reasoning_tokens": 0
+        },
+        {
+          "source": "lantern_reflector_scan.pdf",
+          "error_type": "TitleBlockGateError",
+          "wall_time_s": 4.868,
+          "calls": 3,
+          "cached": 0,
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "reasoning_tokens": 0
+        },
+        {
+          "source": "lantern_bracket.pdf",
+          "error_type": "TitleBlockGateError",
+          "wall_time_s": 4.988,
+          "calls": 3,
+          "cached": 0,
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "reasoning_tokens": 0
+        }
+      ]
+    },
+    {
+      "run": "baseline/slides",
+      "mode": "baseline",
+      "technique": "slides",
+      "variant": null,
+      "backend": "null",
+      "documents": 1,
+      "failed": 0,
+      "calls": 4,
+      "cached": 0,
+      "max_image_pixels": 3241350,
+      "reasoning_effort": {
+        "slides.visual": [
+          "low"
+        ]
+      },
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "reasoning_tokens": 0,
+      "total_tokens": 0,
+      "model_latency_s": 0.0,
+      "wall_time_s": 5.209,
+      "per_task": {
+        "slides.visual": {
+          "calls": 4,
+          "cached": 0,
+          "latency_s": 0.0,
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "reasoning_tokens": 0,
+          "total_tokens": 0
+        }
+      },
+      "per_document": [
+        {
+          "source": "sample_erp_manual.pptx",
+          "error_type": null,
+          "wall_time_s": 5.209,
+          "calls": 4,
+          "cached": 0,
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "reasoning_tokens": 0
+        }
+      ]
+    },
+    {
+      "run": "baseline/docx",
+      "mode": "baseline",
+      "technique": "docx",
+      "variant": null,
+      "backend": "null",
+      "documents": 1,
+      "failed": 0,
+      "calls": 4,
+      "cached": 0,
+      "max_image_pixels": 4680287,
+      "reasoning_effort": {
+        "docx.image_description": [
+          "low"
+        ],
+        "docx.table_distribution": [
+          "medium"
+        ]
+      },
+      "input_tokens": 0,
+      "output_tokens": 0,
+      "reasoning_tokens": 0,
+      "total_tokens": 0,
+      "model_latency_s": 0.0,
+      "wall_time_s": 5.403,
+      "per_task": {
+        "docx.image_description": {
+          "calls": 3,
+          "cached": 0,
+          "latency_s": 0.0,
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "reasoning_tokens": 0,
+          "total_tokens": 0
+        },
+        "docx.table_distribution": {
+          "calls": 1,
+          "cached": 0,
+          "latency_s": 0.0,
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "reasoning_tokens": 0,
+          "total_tokens": 0
+        }
+      },
+      "per_document": [
+        {
+          "source": "lantern_spec.docx",
+          "error_type": null,
+          "wall_time_s": 5.403,
+          "calls": 4,
+          "cached": 0,
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "reasoning_tokens": 0
+        }
+      ]
+    }
+  ],
+  "runs": [
+    {
+      "run": "vlm/drawing@cap",
+      "mode": "vlm",
+      "technique": "drawing",
+      "variant": "cap",
+      "backend": "azure",
+      "model": "gpt-6-luna",
+      "wall_time_s": 60.691,
+      "documents": [
+        {
+          "source": "lantern_housing.pdf",
+          "ok": true,
+          "chunks": 2,
+          "pages": [
+            1,
+            2
+          ],
+          "error": null,
+          "fallbacks": [
+            "image_pixel_cap"
+          ]
+        },
+        {
+          "source": "lantern_reflector_scan.pdf",
+          "ok": true,
+          "chunks": 1,
+          "pages": [
+            1
+          ],
+          "error": null,
+          "fallbacks": [
+            "image_pixel_cap"
+          ]
+        },
+        {
+          "source": "lantern_bracket.pdf",
+          "ok": true,
+          "chunks": 1,
+          "pages": [
+            1
+          ],
+          "error": null,
+          "fallbacks": [
+            "image_pixel_cap"
+          ]
+        }
+      ],
+      "drawing_config": {
+        "page_tiles": {
+          "rows": 3,
+          "cols": 4,
+          "overlap": 0.12,
+          "dpi": 400,
+          "upscale": 2.0
+        },
+        "title_block_focus": {
+          "bbox": [
+            0.68,
+            0.52,
+            1.0,
+            1.0
+          ],
+          "dpi": 500,
+          "upscale": 3.0
+        },
+        "table_focus": {
+          "bbox": [
+            0.82,
+            0.7,
+            1.0,
+            1.0
+          ],
+          "dpi": 650,
+          "upscale": 4.0
+        },
+        "metadata_table": {
+          "bbox": [
+            0.44,
+            0.62,
+            1.0,
+            1.0
+          ],
+          "dpi": 650,
+          "upscale": 4.0,
+          "tile_rows": 2,
+          "tile_cols": 3,
+          "tile_overlap": 0.1
+        },
+        "max_image_pixels": 4000000,
+        "min_pairs": 3,
+        "title_block_pages": "first",
+        "schema": "iso7200-like",
+        "custom_schema_file": false,
+        "domain_terms": "packaged",
+        "include_text_layer": true,
+        "non_defaults": {}
+      },
+      "requests_sent": {
+        "drawing.normalize": {
+          "requests": 3,
+          "images": 0,
+          "max_image_pixels": 0,
+          "image_pixels": 0,
+          "reasoning_effort": [
+            "low"
+          ]
+        },
+        "drawing.table": {
+          "requests": 3,
+          "images": 24,
+          "max_image_pixels": 3999912,
+          "image_pixels": 95965965,
+          "reasoning_effort": [
+            "low"
+          ]
+        },
+        "drawing.vision": {
+          "requests": 3,
+          "images": 42,
+          "max_image_pixels": 3998982,
+          "image_pixels": 167856435,
+          "reasoning_effort": [
+            "low"
+          ]
+        }
+      },
+      "models_reported": [
+        "gpt-6-luna"
+      ],
+      "recording": {
+        "file": "drawing.cap.jsonl",
+        "recorded": 9,
+        "failed_calls": 0
+      }
+    },
+    {
+      "run": "vlm/slides",
+      "mode": "vlm",
+      "technique": "slides",
+      "variant": null,
+      "backend": "azure",
+      "model": "gpt-6-luna",
+      "wall_time_s": 10.451,
+      "documents": [
+        {
+          "source": "sample_erp_manual.pptx",
+          "ok": true,
+          "chunks": 6,
+          "pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "error": null,
+          "fallbacks": []
+        }
+      ],
+      "requests_sent": {
+        "slides.visual": {
+          "requests": 4,
+          "images": 4,
+          "max_image_pixels": 3241350,
+          "image_pixels": 12965400,
+          "reasoning_effort": [
+            "low"
+          ]
+        }
+      },
+      "models_reported": [
+        "gpt-6-luna"
+      ],
+      "recording": {
+        "file": "slides.jsonl",
+        "recorded": 4,
+        "failed_calls": 0
+      }
+    },
+    {
+      "run": "vlm/docx",
+      "mode": "vlm",
+      "technique": "docx",
+      "variant": null,
+      "backend": "azure",
+      "model": "gpt-6-luna",
+      "wall_time_s": 13.634,
+      "documents": [
+        {
+          "source": "lantern_spec.docx",
+          "ok": true,
+          "chunks": 4,
+          "pages": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "error": null,
+          "fallbacks": []
+        }
+      ],
+      "requests_sent": {
+        "docx.image_description": {
+          "requests": 3,
+          "images": 3,
+          "max_image_pixels": 4680287,
+          "image_pixels": 14040861,
+          "reasoning_effort": [
+            "low"
+          ]
+        },
+        "docx.table_distribution": {
+          "requests": 1,
+          "images": 2,
+          "max_image_pixels": 4680287,
+          "image_pixels": 9360574,
+          "reasoning_effort": [
+            "medium"
+          ]
+        }
+      },
+      "models_reported": [
+        "gpt-6-luna"
+      ],
+      "recording": {
+        "file": "docx.jsonl",
+        "recorded": 4,
+        "failed_calls": 0
+      }
+    },
+    {
+      "run": "baseline/drawing@cap",
+      "mode": "baseline",
+      "technique": "drawing",
+      "variant": "cap",
+      "backend": "null",
+      "model": "null",
+      "wall_time_s": 15.044,
+      "documents": [
+        {
+          "source": "lantern_housing.pdf",
+          "ok": false,
+          "chunks": 0,
+          "pages": [],
+          "error": {
+            "type": "TitleBlockGateError",
+            "message": "lantern_housing.pdf page 1: title block yielded 0 pair(s), fewer than the required 3"
+          },
+          "fallbacks": []
+        },
+        {
+          "source": "lantern_reflector_scan.pdf",
+          "ok": false,
+          "chunks": 0,
+          "pages": [],
+          "error": {
+            "type": "TitleBlockGateError",
+            "message": "lantern_reflector_scan.pdf page 1: title block yielded 0 pair(s), fewer than the required 3"
+          },
+          "fallbacks": []
+        },
+        {
+          "source": "lantern_bracket.pdf",
+          "ok": false,
+          "chunks": 0,
+          "pages": [],
+          "error": {
+            "type": "TitleBlockGateError",
+            "message": "lantern_bracket.pdf page 1: title block yielded 0 pair(s), fewer than the required 3"
+          },
+          "fallbacks": []
+        }
+      ],
+      "drawing_config": {
+        "page_tiles": {
+          "rows": 3,
+          "cols": 4,
+          "overlap": 0.12,
+          "dpi": 400,
+          "upscale": 2.0
+        },
+        "title_block_focus": {
+          "bbox": [
+            0.68,
+            0.52,
+            1.0,
+            1.0
+          ],
+          "dpi": 500,
+          "upscale": 3.0
+        },
+        "table_focus": {
+          "bbox": [
+            0.82,
+            0.7,
+            1.0,
+            1.0
+          ],
+          "dpi": 650,
+          "upscale": 4.0
+        },
+        "metadata_table": {
+          "bbox": [
+            0.44,
+            0.62,
+            1.0,
+            1.0
+          ],
+          "dpi": 650,
+          "upscale": 4.0,
+          "tile_rows": 2,
+          "tile_cols": 3,
+          "tile_overlap": 0.1
+        },
+        "max_image_pixels": 4000000,
+        "min_pairs": 3,
+        "title_block_pages": "first",
+        "schema": "iso7200-like",
+        "custom_schema_file": false,
+        "domain_terms": "packaged",
+        "include_text_layer": true,
+        "non_defaults": {}
+      },
+      "requests_sent": {
+        "drawing.normalize": {
+          "requests": 3,
+          "images": 0,
+          "max_image_pixels": 0,
+          "image_pixels": 0,
+          "reasoning_effort": [
+            "low"
+          ]
+        },
+        "drawing.table": {
+          "requests": 3,
+          "images": 24,
+          "max_image_pixels": 3999912,
+          "image_pixels": 95965965,
+          "reasoning_effort": [
+            "low"
+          ]
+        },
+        "drawing.vision": {
+          "requests": 3,
+          "images": 42,
+          "max_image_pixels": 3998982,
+          "image_pixels": 167856435,
+          "reasoning_effort": [
+            "low"
+          ]
+        }
+      },
+      "models_reported": [
+        "null"
+      ]
+    },
+    {
+      "run": "baseline/slides",
+      "mode": "baseline",
+      "technique": "slides",
+      "variant": null,
+      "backend": "null",
+      "model": "null",
+      "wall_time_s": 5.209,
+      "documents": [
+        {
+          "source": "sample_erp_manual.pptx",
+          "ok": true,
+          "chunks": 6,
+          "pages": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "error": null,
+          "fallbacks": [
+            "empty_visual_result"
+          ]
+        }
+      ],
+      "requests_sent": {
+        "slides.visual": {
+          "requests": 4,
+          "images": 4,
+          "max_image_pixels": 3241350,
+          "image_pixels": 12965400,
+          "reasoning_effort": [
+            "low"
+          ]
+        }
+      },
+      "models_reported": [
+        "null"
+      ]
+    },
+    {
+      "run": "baseline/docx",
+      "mode": "baseline",
+      "technique": "docx",
+      "variant": null,
+      "backend": "null",
+      "model": "null",
+      "wall_time_s": 5.403,
+      "documents": [
+        {
+          "source": "lantern_spec.docx",
+          "ok": true,
+          "chunks": 4,
+          "pages": [
+            1,
+            2,
+            3,
+            4
+          ],
+          "error": null,
+          "fallbacks": [
+            "image_description_invalid",
+            "table_rows_from_xml_markers:t1:table_distribution_invalid:row_distribution_not_an_object"
+          ]
+        }
+      ],
+      "requests_sent": {
+        "docx.image_description": {
+          "requests": 3,
+          "images": 3,
+          "max_image_pixels": 4680287,
+          "image_pixels": 14040861,
+          "reasoning_effort": [
+            "low"
+          ]
+        },
+        "docx.table_distribution": {
+          "requests": 1,
+          "images": 2,
+          "max_image_pixels": 4680287,
+          "image_pixels": 9360574,
+          "reasoning_effort": [
+            "medium"
+          ]
+        }
+      },
+      "models_reported": [
+        "null"
+      ]
+    }
+  ],
+  "warnings": [],
+  "caveats": [
+    "Synthetic documents only (3 drawing, 1 slides, 1 docx); invented content generated by vlmrag.synthetic. Numbers describe these fixtures, not real document collections.",
+    "Small N: every ratio comes with its count; one field, block or query moves a ratio by several points.",
+    "Single run: model answers vary between runs and no confidence intervals are reported.",
+    "Retrieval is lexical BM25 over retrieve_content; an embedding retriever would also match paraphrases. Must-mention facts are matched as normalised substrings, so a correct paraphrase counts as not found.",
+    "The text-only baseline never contacts a model: every request it builds is answered locally with '{}' (NullBackend), so its calls are stub answers with zero tokens.",
+    "Drawings use the technique default title_block_pages='first': later sheets carry the title block read on sheet 1 ('inherited' group), so sheet-specific fields (title, scale, sheet) differ there by design.",
+    "The text-only drawing baseline fails the title-block gate by design (an empty answer yields no pairs); for retrieval it is represented by the technique's own chunks with an empty title block (text layer, fields parsed from it, domain synonyms), so the retrieval difference is the model output alone. A drawing whose VLM run fails contributes nothing to the VLM index.",
+    "The synthetic DOCX carries correct rendered-page markers, so the deterministic row fallback is exact by construction: row->page accuracy shows whether the model path keeps rows on their pages, not whether it repairs stale markers."
+  ],
+  "metric_definitions": {
+    "normalization": "Normalised comparisons first unify dash and quote variants, casefold, collapse whitespace runs to one space, strip. Exact comparisons compare the raw strings.",
+    "failures": "A document whose extraction raised is scored, not skipped: every truth item of it counts as wrong or not found. Ratios with an empty denominator are reported as n/a.",
+    "drawing.field_accuracy": "Per title-block field: fraction of truth sheets whose emitted metadata.title_block[field] equals the truth value (exact and normalised). Fields with an empty truth value are not scored.",
+    "drawing.sheet_accuracy": "Per sheet (source page): fraction of that sheet's scored fields that match. Group rows report micro accuracy over all fields of the group and sheet_mean_normalized, the mean of per-sheet accuracies.",
+    "drawing.groups": "all = every truth sheet; read = sheets whose chunk carries a title block read on that same sheet (conditional on success: sheets of failed documents are not in it, so compare it with 'all'); inherited = sheets that received the title block of another page (title_block_pages='first'); raster_title_block = sheets whose truth marks the title block as raster-only (no text layer); text_layer_title_block = the other sheets. all, raster_title_block and text_layer_title_block include the sheets of failed documents, scored as wrong.",
+    "drawing.gate_pass_rate": "Documents that returned chunks / documents attempted. gate_failed counts TitleBlockGateError (fewer than min_pairs pairs); other_errors counts failures before the gate (transport, empty answer, replay miss).",
+    "drawing.variants": "Each drawing variant is a separate run of the same documents that differs only in DrawingConfig.max_image_pixels (cap = packaged default, nocap = 0 = no cap, the original behaviour).",
+    "slides.image_role_accuracy": "Over all truth image blocks: the first emitted description attached to the same shape (matched by shape name) has image_role equal to the truth role. A block without a description counts as wrong.",
+    "slides.must_mention_recall": "Over all must-mention facts of all slides: the normalised fact is a substring of the normalised retrieve_content of that slide's chunk(s). slide_mean_recall averages per-slide recall over slides with at least one fact.",
+    "slides.hallucinated_blocks": "Emitted descriptions that do not describe a distinct truth image block: not tied to any image block (ungrounded), tied to an image not listed in the truth (not_in_truth), or a second description of a block already described (duplicate).",
+    "docx.page_count_correct": "The page count of the technique's page split (provenance.page_split xml_pages + padded_pages, else the highest chunk page) equals truth page_count.",
+    "docx.row_page_accuracy": "Over all rows (header included) of every truth table that spans pages: the set of pages whose chunk metadata.multi_page_tables lists the row index is exactly {truth page}. Rows missing or listed on several pages count as wrong. assignment counts page entries by source (vlm or xml_row_markers).",
+    "docx.image_must_mention_recall": "Over all must-mention facts of pages with pictures: the normalised fact is a substring of the normalised retrieve_content of that page's chunk(s).",
+    "retrieval.index": "One BM25 index (k1=1.2, b=0.75, NFKC+casefold word tokens, distinct query terms) per run over the retrieve_content of ALL chunks of ALL documents of that run. Queries are the truth-file queries of the run's documents; relevance is the (source file name, 1-based page) pairs listed in the truth.",
+    "retrieval.ranking": "Chunk scores are collapsed to pages (a page scores its best chunk; duplicate chunks of a page count once); pages scoring 0 are not retrieved. Ties are broken against relevant pages, so ranks are lower bounds.",
+    "retrieval.recall_at_k": "|relevant pages among the top k ranked pages| / |relevant pages|, averaged over queries.",
+    "retrieval.mrr": "Mean over queries of 1 / rank of the first relevant page (0 when none is retrieved).",
+    "retrieval.baseline": "The text-only baseline indexes the chunks of the NullBackend runs. A drawing whose baseline run raised (the acceptance gate rejects an empty answer by design) is represented by the drawing technique's own chunks built with an empty title block - file name, page, text layer, fields parsed from the text layer, domain synonyms - so it differs from a VLM chunk only by what the model read (listed under model_free_substitutes). A drawing whose VLM run failed contributes no chunks to the VLM index, as it would not be indexed in production.",
+    "cost": "Per technique run (and drawing variant), from the VLM client's usage ledger: calls = every answer the technique received (re-asks included, cached answers included), cached = the subset served from --cache-dir with no tokens or latency, input/output/reasoning tokens as reported by the provider, model latency (sum of per-call latencies, so concurrent calls overlap) and wall time of the whole run. requests_sent (per run) and max_image_pixels count what was actually sent to the backend, every attempt included; reasoning_effort lists the efforts sent per task. Replayed runs report the usage stored in the recording. Baseline runs answer locally with NullBackend: zero tokens."
+  }
+}

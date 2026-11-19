@@ -1,0 +1,50 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.10", "3.12"]
+    env:
+      # Tests never call a real model; this makes the intent explicit.
+      VLMRAG_RUN_NETWORK_TESTS: "0"
+      PYTHONUTF8: "1"
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+          cache-dependency-path: pyproject.toml
+
+      - name: Install
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e ".[dev]"
+
+      - name: LibreOffice availability
+        # This workflow does not install LibreOffice: when the runner has none, tests
+        # marked "soffice" are skipped (see tests/conftest.py) and the rest use
+        # generated fixtures and scripted model answers.
+        run: command -v soffice || echo "soffice not found - LibreOffice tests will be skipped"
+
+      - name: Tests
+        run: python -m pytest -q -rs
+
+      - name: Pyflakes
+        run: python -m pyflakes src tests examples scripts
+
+      - name: Release check
+        # Without --denylist only the generic checks run (secrets, private IPs,
+        # endpoints, binary/document files, encoding); the denylist stays private.
+        run: python scripts/release_check.py

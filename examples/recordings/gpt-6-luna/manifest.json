@@ -1,0 +1,155 @@
+{
+  "format": "vlmrag-evaluation-recording/1",
+  "package_version": "0.1.0",
+  "label": "synthetic set seed 0, azure gpt-6-luna",
+  "date": "2026-11-19",
+  "provider": "azure",
+  "model": "gpt-6-luna",
+  "techniques": [
+    "drawing",
+    "slides",
+    "docx"
+  ],
+  "variants": [
+    {
+      "name": "cap",
+      "max_image_pixels": 4000000
+    }
+  ],
+  "baseline": true,
+  "files": {
+    "drawing@cap": "drawing.cap.jsonl",
+    "slides": "slides.jsonl",
+    "docx": "docx.jsonl"
+  },
+  "documents": {
+    "generated": true,
+    "seed": 0,
+    "docx_layout_pins": {
+      "lantern_spec.docx": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    "items": [
+      {
+        "source": "lantern_housing.pdf",
+        "technique": "drawing",
+        "has_truth": true,
+        "doc_id": "b6c2cf0192d0573c",
+        "queries": 3,
+        "truth_pages": 2
+      },
+      {
+        "source": "lantern_reflector_scan.pdf",
+        "technique": "drawing",
+        "has_truth": true,
+        "doc_id": "b321678c888a843c",
+        "queries": 3,
+        "truth_pages": 1
+      },
+      {
+        "source": "lantern_bracket.pdf",
+        "technique": "drawing",
+        "has_truth": true,
+        "doc_id": "b99d54819b3193e8",
+        "queries": 3,
+        "truth_pages": 1
+      },
+      {
+        "source": "sample_erp_manual.pptx",
+        "technique": "slides",
+        "has_truth": true,
+        "doc_id": "2d64b79fa5b0fc78",
+        "queries": 5,
+        "truth_pages": 6
+      },
+      {
+        "source": "lantern_spec.docx",
+        "technique": "docx",
+        "has_truth": true,
+        "doc_id": "0a8900f3c9490543",
+        "queries": 4,
+        "layout_source": "libreoffice",
+        "truth_pages": 4
+      }
+    ]
+  },
+  "drawing_non_defaults": {},
+  "drawing_config": {
+    "custom_schema_file": false,
+    "domain_terms": "packaged"
+  },
+  "drawing_overrides": {},
+  "settings": {
+    "reasoning_effort": "low",
+    "structured_output": true,
+    "max_retries": 3,
+    "timeout_s": 600.0,
+    "max_concurrency": 4,
+    "cache": false
+  }
+}

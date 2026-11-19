@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+build/
+dist/
+.pytest_cache/
+
+# Local configuration and caches
+.env
+.cache/
+work/
+out/
+
+# Generated documents are never committed: fixtures are produced by `python -m vlmrag.synthetic`.
+*.pdf
+*.doc
+*.docx
+*.ppt
+*.pptx
+*.xls
+*.xlsx
+*.msg
+*.zip
